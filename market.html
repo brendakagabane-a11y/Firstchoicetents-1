@@ -1,0 +1,2357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Premium Tents & Aluminium Solutions | First Choice Uganda</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+        }
+
+        :root {
+            --primary: #2563eb;
+            --primary-light: #3b82f6;
+            --primary-dark: #1d4ed8;
+            --secondary: #0f172a;
+            --accent: #f59e0b;
+            --light: #f8fafc;
+            --light-gray: #f1f5f9;
+            --medium-gray: #e2e8f0;
+            --dark-gray: #64748b;
+            --text: #1e293b;
+            --success: #10b981;
+            --warning: #f59e0b;
+            --error: #ef4444;
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            --radius: 12px;
+            --radius-lg: 16px;
+        }
+
+        body {
+            background: white;
+            color: var(--text);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Header */
+        .header {
+            background: white;
+            padding: 1rem 2rem;
+            box-shadow: var(--shadow);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .logo-icon {
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+        }
+
+        .logo-icon img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        .logo-text h1 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--secondary);
+        }
+
+        .logo-text p {
+            font-size: 0.9rem;
+            color: var(--dark-gray);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text);
+            font-weight: 500;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        .nav-links a:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background-color: var(--primary);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover:after {
+            width: 100%;
+        }
+
+        .cta-button {
+            background: linear-gradient(135deg, var(--primary), var(--primary-light));
+            color: white;
+            border: none;
+            padding: 0.8rem 1.5rem;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(37, 99, 235, 0.4);
+        }
+
+        /* Mobile Menu */
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--secondary);
+            cursor: pointer;
+        }
+
+        .mobile-menu {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.98);
+            z-index: 1000;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        .mobile-menu.active {
+            display: flex;
+        }
+
+        .mobile-menu a {
+            text-decoration: none;
+            color: var(--secondary);
+            font-size: 1.5rem;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        .mobile-menu a:hover {
+            color: var(--primary);
+        }
+
+        .close-menu {
+            position: absolute;
+            top: 2rem;
+            right: 2rem;
+            background: none;
+            border: none;
+            font-size: 2rem;
+            color: var(--secondary);
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+            color: white;
+            padding: 5rem 2rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero h2 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            opacity: 0.9;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn-primary {
+            background: var(--accent);
+            color: white;
+            border: none;
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .btn-primary:hover {
+            background: #e58e0b;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(245, 158, 11, 0.4);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: white;
+            border: 2px solid white;
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .btn-secondary:hover {
+            background: white;
+            color: var(--primary);
+        }
+
+        /* Products Section */
+        .products {
+            padding: 5rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-header h2 {
+            font-size: 2.5rem;
+            color: var(--secondary);
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        .section-header p {
+            font-size: 1.1rem;
+            color: var(--dark-gray);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .product-categories {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .category-btn {
+            background: var(--light-gray);
+            border: none;
+            padding: 0.8rem 1.5rem;
+            border-radius: 50px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .category-btn.active {
+            background: var(--primary);
+            color: white;
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .product-card {
+            background: white;
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .product-image {
+            height: 400px;
+            background-size: cover;
+            background-position: center;
+            background-color: var(--light-gray);
+        }
+
+        .product-details {
+            padding: 1.5rem;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .product-details h3 {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+            color: var(--secondary);
+        }
+
+        .product-details p {
+            color: var(--dark-gray);
+            margin-bottom: 1rem;
+            font-size: 0.9rem;
+            flex-grow: 1;
+        }
+
+        .product-price {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        .product-features {
+            list-style: none;
+            margin-bottom: 1.5rem;
+        }
+
+        .product-features li {
+            padding: 0.3rem 0;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.9rem;
+        }
+
+        .product-features li i {
+            color: var(--success);
+        }
+
+        .order-btn {
+            width: 100%;
+            background: linear-gradient(135deg, var(--primary), var(--primary-light));
+            color: white;
+            border: none;
+            padding: 0.8rem;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+
+        .order-btn:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+        }
+
+        /* Features Section */
+        .features {
+            background: var(--light);
+            padding: 5rem 2rem;
+        }
+
+        .features-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .feature-card {
+            background: white;
+            padding: 2rem;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .feature-icon {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, var(--primary), var(--primary-light));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            color: white;
+            font-size: 1.8rem;
+        }
+
+        .feature-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            color: var(--secondary);
+        }
+
+        .feature-card p {
+            color: var(--dark-gray);
+        }
+
+        /* Testimonials */
+        .testimonials {
+            padding: 5rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .testimonial-card {
+            background: white;
+            padding: 2rem;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+        }
+
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 1.5rem;
+            color: var(--text);
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .author-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: var(--light-gray);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary);
+            font-weight: bold;
+        }
+
+        .author-info h4 {
+            font-weight: 600;
+            margin-bottom: 0.3rem;
+        }
+
+        .author-info p {
+            color: var(--dark-gray);
+            font-size: 0.9rem;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+            color: white;
+            padding: 5rem 2rem;
+            text-align: center;
+        }
+
+        .cta-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .cta-content h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        .cta-content p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--secondary);
+            color: white;
+            padding: 3rem 2rem;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 3rem;
+        }
+
+        .footer-column h3 {
+            font-size: 1.2rem;
+            margin-bottom: 1.5rem;
+            color: white;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.8rem;
+        }
+
+        .footer-links a {
+            color: var(--light-gray);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: white;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            color: var(--light-gray);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .social-link {
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            transition: all 0.3s ease;
+        }
+
+        .social-link:hover {
+            background: var(--primary);
+            transform: translateY(-3px);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 3rem;
+            color: var(--light-gray);
+            font-size: 0.9rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* WhatsApp Float */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 70px;
+            height: 70px;
+            background: #25D366;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.2rem;
+            color: white;
+            box-shadow: 0 10px 40px rgba(37, 211, 102, 0.5);
+            z-index: 999;
+            text-decoration: none;
+            animation: pulse 2s infinite;
+            transition: all 0.3s ease;
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+            box-shadow: 0 15px 50px rgba(37, 211, 102, 0.7);
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+
+        /* Rental Section Styles */
+        .rental {
+            padding: 5rem 2rem;
+            background: var(--light);
+        }
+
+        .rental-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .rental-info {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            margin-bottom: 4rem;
+        }
+
+        .rental-text h3 {
+            font-size: 1.8rem;
+            color: var(--secondary);
+            margin-bottom: 1.5rem;
+        }
+
+        .rental-text p {
+            color: var(--dark-gray);
+            margin-bottom: 2rem;
+            font-size: 1.1rem;
+        }
+
+        .rental-features {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .rental-feature {
+            display: flex;
+            gap: 1rem;
+            align-items: flex-start;
+        }
+
+        .rental-feature i {
+            background: var(--primary);
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .rental-feature h4 {
+            font-size: 1.1rem;
+            margin-bottom: 0.3rem;
+            color: var(--secondary);
+        }
+
+        .rental-feature p {
+            margin: 0;
+            font-size: 0.95rem;
+            color: var(--dark-gray);
+        }
+
+        .rental-card {
+            background: white;
+            padding: 2rem;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            height: fit-content;
+        }
+
+        .rental-card h3 {
+            font-size: 1.5rem;
+            color: var(--secondary);
+            margin-bottom: 0.5rem;
+        }
+
+        .rental-card p {
+            color: var(--dark-gray);
+            margin-bottom: 1.5rem;
+        }
+
+        .rental-contact-options {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .rental-contact-btn {
+            padding: 1rem 1.5rem;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+
+        .whatsapp-btn {
+            background: #25D366;
+            color: white;
+        }
+
+        .whatsapp-btn:hover {
+            background: #1da851;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(37, 211, 102, 0.4);
+        }
+
+        .call-btn {
+            background: var(--primary);
+            color: white;
+        }
+
+        .call-btn:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(37, 99, 235, 0.4);
+        }
+
+        .rental-note {
+            background: var(--light-gray);
+            padding: 1.2rem;
+            border-radius: 8px;
+            font-size: 0.9rem;
+        }
+
+        .rental-note p {
+            margin-bottom: 0.8rem;
+        }
+
+        .rental-note ul {
+            padding-left: 1.2rem;
+            color: var(--dark-gray);
+        }
+
+        .rental-note li {
+            margin-bottom: 0.3rem;
+        }
+
+        .rental-products h3 {
+            font-size: 1.8rem;
+            color: var(--secondary);
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .rental-items-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .rental-item {
+            background: white;
+            padding: 2rem;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .rental-item:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .rental-item-icon {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, var(--primary), var(--primary-light));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            color: white;
+            font-size: 1.8rem;
+        }
+
+        .rental-item h4 {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            color: var(--secondary);
+        }
+
+        .rental-item p {
+            color: var(--dark-gray);
+            margin-bottom: 1rem;
+            font-size: 0.95rem;
+        }
+
+        .rental-price {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .hero h2 {
+                font-size: 2.5rem;
+            }
+            
+            .section-header h2 {
+                font-size: 2.2rem;
+            }
+            
+            .cta-content h2 {
+                font-size: 2.2rem;
+            }
+        }
+
+        @media (max-width: 968px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .hero h2 {
+                font-size: 2.2rem;
+            }
+            
+            .product-grid {
+                grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            }
+            
+            .rental-info {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            
+            .rental-text h3 {
+                font-size: 1.6rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .header {
+                padding: 1rem;
+            }
+            
+            .header-content {
+                flex-direction: row;
+                justify-content: space-between;
+            }
+            
+            .logo-text h1 {
+                font-size: 1.3rem;
+            }
+            
+            .logo-text p {
+                font-size: 0.8rem;
+            }
+            
+            .hero {
+                padding: 4rem 1.5rem;
+            }
+            
+            .hero h2 {
+                font-size: 2rem;
+            }
+            
+            .hero p {
+                font-size: 1.1rem;
+            }
+            
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .btn-primary, .btn-secondary {
+                width: 100%;
+                max-width: 300px;
+                justify-content: center;
+            }
+            
+            .products, .features, .testimonials, .rental {
+                padding: 4rem 1.5rem;
+            }
+            
+            .section-header h2 {
+                font-size: 2rem;
+            }
+            
+            .product-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+            
+            .product-categories {
+                gap: 0.5rem;
+            }
+            
+            .category-btn {
+                padding: 0.7rem 1.2rem;
+                font-size: 0.9rem;
+            }
+            
+            .features-grid, .testimonial-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+            
+            .feature-card, .testimonial-card {
+                padding: 1.5rem;
+            }
+            
+            .cta-section {
+                padding: 4rem 1.5rem;
+            }
+            
+            .cta-content h2 {
+                font-size: 2rem;
+            }
+            
+            .footer {
+                padding: 2.5rem 1.5rem;
+            }
+            
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            
+            .whatsapp-float {
+                width: 60px;
+                height: 60px;
+                font-size: 1.8rem;
+                bottom: 20px;
+                right: 20px;
+            }
+            
+            .rental-items-grid {
+                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+                gap: 1.5rem;
+            }
+            
+            .rental-item {
+                padding: 1.5rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero {
+                padding: 3rem 1rem;
+            }
+            
+            .hero h2 {
+                font-size: 1.8rem;
+            }
+            
+            .hero p {
+                font-size: 1rem;
+            }
+            
+            .products, .features, .testimonials, .rental {
+                padding: 3rem 1rem;
+            }
+            
+            .section-header h2 {
+                font-size: 1.8rem;
+            }
+            
+            .section-header p {
+                font-size: 1rem;
+            }
+            
+            .product-details {
+                padding: 1.2rem;
+            }
+            
+            .product-price {
+                font-size: 1.2rem;
+            }
+            
+            .cta-section {
+                padding: 3rem 1rem;
+            }
+            
+            .cta-content h2 {
+                font-size: 1.8rem;
+            }
+            
+            .cta-content p {
+                font-size: 1rem;
+            }
+            
+            .footer {
+                padding: 2rem 1rem;
+            }
+            
+            .logo-icon {
+                width: 40px;
+                height: 40px;
+                font-size: 1.2rem;
+            }
+            
+            .logo-text h1 {
+                font-size: 1.1rem;
+            }
+            
+            .cta-button {
+                padding: 0.7rem 1.2rem;
+                font-size: 0.9rem;
+            }
+            
+            .rental-card {
+                padding: 1.5rem;
+            }
+            
+            .rental-contact-btn {
+                padding: 0.9rem 1.2rem;
+                font-size: 0.9rem;
+            }
+            
+            .rental-items-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 360px) {
+            .hero h2 {
+                font-size: 1.6rem;
+            }
+            
+            .section-header h2 {
+                font-size: 1.6rem;
+            }
+            
+            .product-categories {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .category-btn {
+                width: 100%;
+                max-width: 200px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-content">
+            <div class="logo">
+                <div class="logo-icon">
+                    <img src="logo1.png" alt="First Choice Tents & Aluminium Fabrication Logo">
+                </div>
+               
+            </div>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="contact.html">Contact us</a>
+                <a href="services.html">Our services</a>
+                <a href="support.html">AI Support</a>
+            </div>
+            <button class="cta-button" onclick="scrollToProducts()">
+                <i class="fas fa-shopping-cart"></i>
+                Order Now
+            </button>
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <button class="close-menu" id="closeMenu">
+            <i class="fas fa-times"></i>
+        </button>
+        <a href="index.html">Home</a>
+        <a href="services.html">Our services</a>
+        <a href="contact.html">Contact Us</a>
+        <a href="support.html">AI Support</a>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h2>First Choice Tents and Aluminium Fabrication</h2>
+            <p>Uganda's leading manufacturer of high-quality tents, aluminium doors, windows, and custom fabrication services. Durable, affordable, and built to last.</p>
+            <div class="hero-buttons">
+                <button class="btn-primary" onclick="scrollToProducts()">
+                    <i class="fas fa-eye"></i>
+                    View Products
+                </button>
+                <button class="btn-secondary" onclick="openWhatsApp()">
+                    <i class="fab fa-whatsapp"></i>
+                    Chat on WhatsApp
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section class="products" id="products">
+        <div class="section-header">
+            <h2>Our Premium Products</h2>
+            <p>Discover our wide range of tents and aluminium solutions tailored for your needs</p>
+        </div>
+        
+        <!-- Updated Product Categories -->
+        <div class="product-categories">
+            <button class="category-btn active" data-category="all">All Products</button>
+            <button class="category-btn" data-category="event">Event Tents</button>
+            <button class="category-btn" data-category="parking">Parking & Shade</button>
+            <button class="category-btn" data-category="truck">Truck & Cargo Covers</button>
+            <button class="category-btn" data-category="storage">Storage / Industrial</button>
+            <button class="category-btn" data-category="aluminium">Aluminium</button>
+            <button class="category-btn" data-category="custom">Custom Fabrication</button>
+        </div>
+        
+        <div class="product-grid">
+            <!-- Event Tent -->
+            <div class="product-card" data-category="event">
+                <div class="product-image" style="background-image:url('Home69.jpg')"></div>
+                <div class="product-details">
+                    <h3>Wedding & Event Marquee</h3>
+                    <p>Spacious, elegant tents ideal for weddings and parties.</p>
+                    
+                    <ul class="product-features">
+                        <li><i class="fas fa-check"></i> Weather-resistant material</li>
+                        <li><i class="fas fa-check"></i> Easy setup & takedown</li>
+                        <li><i class="fas fa-check"></i> Multiple size options</li>
+                        <li><i class="fas fa-check"></i> 2-year warranty</li>
+                    </ul>
+                    <button class="order-btn" data-product="Wedding & Event Marquee">
+                        <i class="fab fa-whatsapp"></i>
+                        Request Quote on WhatsApp
+                    </button>
+                </div>
+            </div>
+              <div class="product-card" data-category="event">
+                <div class="product-image" style="background-image:url('Home48.jpg')"></div>
+                <div class="product-details">
+                    <h3>Wedding & Event Marquee</h3>
+                    <p>Spacious, elegant tents ideal for weddings and parties.</p>
+            
+                    <ul class="product-features">
+                        <li><i class="fas fa-check"></i> Weather-resistant material</li>
+                        <li><i class="fas fa-check"></i> Easy setup & takedown</li>
+                        <li><i class="fas fa-check"></i> Multiple size options</li>
+                        <li><i class="fas fa-check"></i> 2-year warranty</li>
+                    </ul>
+                    <button class="order-btn" data-product="Wedding & Event Marquee">
+                        <i class="fab fa-whatsapp"></i>
+                        Request Quote on WhatsApp
+                    </button>
+                </div>
+            </div>
+            
+              <div class="product-card" data-category="event">
+                <div class="product-image" style="background-image:url('Home49.jpg')"></div>
+                <div class="product-details">
+                    <h3>Wedding & Event Marquee</h3>
+                    <p>Spacious, elegant tents ideal for weddings and parties.</p>
+                    
+                    <ul class="product-features">
+                        <li><i class="fas fa-check"></i> Weather-resistant material</li>
+                        <li><i class="fas fa-check"></i> Easy setup & takedown</li>
+                        <li><i class="fas fa-check"></i> Multiple size options</li>
+                        <li><i class="fas fa-check"></i> 2-year warranty</li>
+                    </ul>
+                    <button class="order-btn" data-product="Wedding & Event Marquee">
+                        <i class="fab fa-whatsapp"></i>
+                        Request Quote on WhatsApp
+                    </button>
+                </div>
+            </div>
+            
+            <div class="product-card" data-category="event">
+                <div class="product-image" style="background-image:url('Home55.jpg')"></div>
+                <div class="product-details">
+                    <h3>Wedding & Event Marquee</h3>
+                    <p>Spacious, elegant tents ideal for weddings and parties.</p>
+
+                    <ul class="product-features">
+                        <li><i class="fas fa-check"></i> Weather-resistant material</li>
+                        <li><i class="fas fa-check"></i> Easy setup & takedown</li>
+                        <li><i class="fas fa-check"></i> Multiple size options</li>
+                        <li><i class="fas fa-check"></i> 2-year warranty</li>
+                    </ul>
+                    <button class="order-btn" data-product="Wedding & Event Marquee">
+                        <i class="fab fa-whatsapp"></i>
+                        Request Quote on WhatsApp
+                    </button>
+                </div>
+            </div>
+            
+              <div class="product-card" data-category="event">
+                <div class="product-image" style="background-image:url('Home76.jpeg')"></div>
+                <div class="product-details">
+                    <h3>Wedding & Event Marquee</h3>
+                    <p>Spacious, elegant tents ideal for weddings and parties.</p>
+                   
+                    <ul class="product-features">
+                        <li><i class="fas fa-check"></i> Weather-resistant material</li>
+                        <li><i class="fas fa-check"></i> Easy setup & takedown</li>
+                        <li><i class="fas fa-check"></i> Multiple size options</li>
+                        <li><i class="fas fa-check"></i> 2-year warranty</li>
+                    </ul>
+                    <button class="order-btn" data-product="Wedding & Event Marquee">
+                        <i class="fab fa-whatsapp"></i>
+                        Request Quote on WhatsApp
+                    </button>
+                </div>
+            </div>
+            
+              <div class="product-card" data-category="event">
+                <div class="product-image" style="background-image:url('Home51.jpg')"></div>
+                <div class="product-details">
+                    <h3>Wedding & Event Marquee</h3>
+                    <p>Spacious, elegant tents ideal for weddings and parties.</p>
+                    
+                    <ul class="product-features">
+                        <li><i class="fas fa-check"></i> Weather-resistant material</li>
+                        <li><i class="fas fa-check"></i> Easy setup & takedown</li>
+                        <li><i class="fas fa-check"></i> Multiple size options</li>
+                        <li><i class="fas fa-check"></i> 2-year warranty</li>
+                    </ul>
+                    <button class="order-btn" data-product="Wedding & Event Marquee">
+                        <i class="fab fa-whatsapp"></i>
+                        Request Quote on WhatsApp
+                    </button>
+                </div>
+            </div>
+            
+              <div class="product-card" data-category="event">
+                <div class="product-image" style="background-image:url('Home74.jpeg')"></div>
+                <div class="product-details">
+                    <h3>Wedding & Event Marquee</h3>
+                    <p>Spacious, elegant tents ideal for weddings and parties.</p>
+
+                    <ul class="product-features">
+                        <li><i class="fas fa-check"></i> Weather-resistant material</li>
+                        <li><i class="fas fa-check"></i> Easy setup & takedown</li>
+                        <li><i class="fas fa-check"></i> Multiple size options</li>
+                        <li><i class="fas fa-check"></i> 2-year warranty</li>
+                    </ul>
+                    <button class="order-btn" data-product="Wedding & Event Marquee">
+                        <i class="fab fa-whatsapp"></i>
+                        Request Quote on WhatsApp
+                    </button>
+                </div>
+            </div>
+            
+              <div class="product-card" data-category="event">
+                <div class="product-image" style="background-image:url('Home72.jpeg')"></div>
+                <div class="product-details">
+                    <h3>Wedding & Event Marquee</h3>
+                    <p>Spacious, elegant tents ideal for weddings and parties.</p>
+                    
+                    <ul class="product-features">
+                        <li><i class="fas fa-check"></i> Weather-resistant material</li>
+                        <li><i class="fas fa-check"></i> Easy setup & takedown</li>
+                        <li><i class="fas fa-check"></i> Multiple size options</li>
+                        <li><i class="fas fa-check"></i> 2-year warranty</li>
+                    </ul>
+                    <button class="order-btn" data-product="Wedding & Event Marquee">
+                        <i class="fab fa-whatsapp"></i>
+                        Request Quote on WhatsApp
+                    </button>
+                </div>
+            </div>
+            
+              <div class="product-card" data-category="event">
+                <div class="product-image" style="background-image:url('Home71.jpeg')"></div>
+                <div class="product-details">
+                    <h3>Wedding & Event Marquee</h3>
+                    <p>Spacious, elegant tents ideal for weddings and parties.</p>
+                    
+                    <ul class="product-features">
+                        <li><i class="fas fa-check"></i> Weather-resistant material</li>
+                        <li><i class="fas fa-check"></i> Easy setup & takedown</li>
+                        <li><i class="fas fa-check"></i> Multiple size options</li>
+                        <li><i class="fas fa-check"></i> 2-year warranty</li>
+                    </ul>
+                    <button class="order-btn" data-product="Wedding & Event Marquee">
+                        <i class="fab fa-whatsapp"></i>
+                        Request Quote on WhatsApp
+                    </button>
+                </div>
+            </div>
+            
+              <div class="product-card" data-category="event">
+                <div class="product-image" style="background-image:url('Home70.jpeg')"></div>
+                <div class="product-details">
+                    <h3>Wedding & Event Marquee</h3>
+                    <p>Spacious, elegant tents ideal for weddings and parties.</p>
+                    
+                    <ul class="product-features">
+                        <li><i class="fas fa-check"></i> Weather-resistant material</li>
+                        <li><i class="fas fa-check"></i> Easy setup & takedown</li>
+                        <li><i class="fas fa-check"></i> Multiple size options</li>
+                        <li><i class="fas fa-check"></i> 2-year warranty</li>
+                    </ul>
+                    <button class="order-btn" data-product="Wedding & Event Marquee">
+                        <i class="fab fa-whatsapp"></i>
+                        Request Quote on WhatsApp
+                    </button>
+                </div>
+            </div>
+            
+            
+            <!-- Parking Tent -->
+            <div class="product-card" data-category="parking">
+                <div class="product-image" style="background-image:url('Pick30.jpg')"></div>
+                <div class="product-details">
+                    <h3>Car Parking Shade Tent</h3>
+                    <p>Durable aluminium-frame shades for car parks and institutions.</p>
+                    <ul class="product-features">
+                        <li><i class="fas fa-check"></i> Heavy-duty construction</li>
+                        <li><i class="fas fa-check"></i> UV protection</li>
+                        <li><i class="fas fa-check"></i> Custom sizes available</li>
+                        <li><i class="fas fa-check"></i> 3-year warranty</li>
+                    </ul>
+                    <button class="order-btn" data-product="Car Parking Shade Tent">
+                        <i class="fab fa-whatsapp"></i>
+                        Request Quote on WhatsApp
+                    </button>
+                </div>
+            </div>
+                        <div class="product-card" data-category="parking">
+                <div class="product-image" style="background-image:url('cartents8.jpg')"></div>
+                <div class="product-details">
+                    <h3>Car Parking Shade Tent</h3>
+                    <p>Durable aluminium-frame shades for car parks and institutions.</p>
+                    
+                    <ul class="product-features">
+                        <li><i class="fas fa-check"></i> Heavy-duty construction</li>
+                        <li><i class="fas fa-check"></i> UV protection</li>
+                        <li><i class="fas fa-check"></i> Custom sizes available</li>
+                        <li><i class="fas fa-check"></i> 3-year warranty</li>
+                    </ul>
+                    <button class="order-btn" data-product="Car Parking Shade Tent">
+                        <i class="fab fa-whatsapp"></i>
+                        Request Quote on WhatsApp
+                    </button>
+                </div>
+            </div>
+            
+                        <div class="product-card" data-category="parking">
+                <div class="product-image" style="background-image:url('cartents13.jpg')"></div>
+                <div class="product-details">
+                    <h3>Car Parking Shade Tent</h3>
+                    <p>Durable aluminium-frame shades for car parks and institutions.</p>
+                    
+                    <ul class="product-features">
+                        <li><i class="fas fa-check"></i> Heavy-duty construction</li>
+                        <li><i class="fas fa-check"></i> UV protection</li>
+                        <li><i class="fas fa-check"></i> Custom sizes available</li>
+                        <li><i class="fas fa-check"></i> 3-year warranty</li>
+                    </ul>
+                    <button class="order-btn" data-product="Car Parking Shade Tent">
+                        <i class="fab fa-whatsapp"></i>
+                        Request Quote on WhatsApp
+                    </button>
+                </div>
+            </div>
+            
+                        <div class="product-card" data-category="parking">
+                <div class="product-image" style="background-image:url('Cartents11.jpeg')"></div>
+                <div class="product-details">
+                    <h3>Car Parking Shade Tent</h3>
+                    <p>Durable aluminium-frame shades for car parks and institutions.</p>
+                    
+                    <ul class="product-features">
+                        <li><i class="fas fa-check"></i> Heavy-duty construction</li>
+                        <li><i class="fas fa-check"></i> UV protection</li>
+                        <li><i class="fas fa-check"></i> Custom sizes available</li>
+                        <li><i class="fas fa-check"></i> 3-year warranty</li>
+                    </ul>
+                    <button class="order-btn" data-product="Car Parking Shade Tent">
+                        <i class="fab fa-whatsapp"></i>
+                        Request Quote on WhatsApp
+                    </button>
+                </div>
+            </div>
+            
+                        <div class="product-card" data-category="parking">
+                <div class="product-image" style="background-image:url('Cartents6.jpeg')"></div>
+                <div class="product-details">
+                    <h3>Car Parking Shade Tent</h3>
+                    <p>Durable aluminium-frame shades for car parks and institutions.</p>
+                    
+                    <ul class="product-features">
+                        <li><i class="fas fa-check"></i> Heavy-duty construction</li>
+                        <li><i class="fas fa-check"></i> UV protection</li>
+                        <li><i class="fas fa-check"></i> Custom sizes available</li>
+                        <li><i class="fas fa-check"></i> 3-year warranty</li>
+                    </ul>
+                    <button class="order-btn" data-product="Car Parking Shade Tent">
+                        <i class="fab fa-whatsapp"></i>
+                        Request Quote on WhatsApp
+                    </button>
+                </div>
+            </div>
+            
+                        <div class="product-card" data-category="parking">
+                <div class="product-image" style="background-image:url('Cartents3.jpeg')"></div>
+                <div class="product-details">
+                    <h3>Car Parking Shade Tent</h3>
+                    <p>Durable aluminium-frame shades for car parks and institutions.</p>
+                    
+                    <ul class="product-features">
+                        <li><i class="fas fa-check"></i> Heavy-duty construction</li>
+                        <li><i class="fas fa-check"></i> UV protection</li>
+                        <li><i class="fas fa-check"></i> Custom sizes available</li>
+                        <li><i class="fas fa-check"></i> 3-year warranty</li>
+                    </ul>
+                    <button class="order-btn" data-product="Car Parking Shade Tent">
+                        <i class="fab fa-whatsapp"></i>
+                        Request Quote on WhatsApp
+                    </button>
+                </div>
+            </div>
+            
+                        <div class="product-card" data-category="parking">
+                <div class="product-image" style="background-image:url('Cartents15.jpeg')"></div>
+                <div class="product-details">
+                    <h3>Car Parking Shade Tent</h3>
+                    <p>Durable aluminium-frame shades for car parks and institutions.</p>
+                    
+                    <ul class="product-features">
+                        <li><i class="fas fa-check"></i> Heavy-duty construction</li>
+                        <li><i class="fas fa-check"></i> UV protection</li>
+                        <li><i class="fas fa-check"></i> Custom sizes available</li>
+                        <li><i class="fas fa-check"></i> 3-year warranty</li>
+                    </ul>
+                    <button class="order-btn" data-product="Car Parking Shade Tent">
+                        <i class="fab fa-whatsapp"></i>
+                        Request Quote on WhatsApp
+                    </button>
+                </div>
+            </div>
+            
+                        <div class="product-card" data-category="parking">
+                <div class="product-image" style="background-image:url('Cartents7.jpeg')"></div>
+                <div class="product-details">
+                    <h3>Car Parking Shade Tent</h3>
+                    <p>Durable aluminium-frame shades for car parks and institutions.</p>
+                    
+                    <ul class="product-features">
+                        <li><i class="fas fa-check"></i> Heavy-duty construction</li>
+                        <li><i class="fas fa-check"></i> UV protection</li>
+                        <li><i class="fas fa-check"></i> Custom sizes available</li>
+                        <li><i class="fas fa-check"></i> 3-year warranty</li>
+                    </ul>
+                    <button class="order-btn" data-product="Car Parking Shade Tent">
+                        <i class="fab fa-whatsapp"></i>
+                        Request Quote on WhatsApp
+                    </button>
+                </div>
+            </div>
+            
+                        <div class="product-card" data-category="parking">
+                <div class="product-image" style="background-image:url('Cartents4.jpg')"></div>
+                <div class="product-details">
+                    <h3>Car Parking Shade Tent</h3>
+                    <p>Durable aluminium-frame shades for car parks and institutions.</p>
+                    
+                    <ul class="product-features">
+                        <li><i class="fas fa-check"></i> Heavy-duty construction</li>
+                        <li><i class="fas fa-check"></i> UV protection</li>
+                        <li><i class="fas fa-check"></i> Custom sizes available</li>
+                        <li><i class="fas fa-check"></i> 3-year warranty</li>
+                    </ul>
+                    <button class="order-btn" data-product="Car Parking Shade Tent">
+                        <i class="fab fa-whatsapp"></i>
+                        Request Quote on WhatsApp
+                    </button>
+                </div>
+            </div>
+            
+            
+            
+            <!-- Truck Cover -->
+            <div class="product-card" data-category="truck">
+                <div class="product-image" style="background-image:url('Fab32.jpg')"></div>
+                <div class="product-details">
+                    <h3>Truck & Cargo Covers</h3>
+                    <p>Heavy-duty waterproof tarpaulins for transport and logistics.</p>
+                  
+                    <ul class="product-features">
+                        <li><i class="fas fa-check"></i> Waterproof material</li>
+                        <li><i class="fas fa-check"></i> Tear-resistant</li>
+                        <li><i class="fas fa-check"></i> Custom sizing</li>
+                        <li><i class="fas fa-check"></i> 2-year warranty</li>
+                    </ul>
+                    <button class="order-btn" data-product="Truck & Cargo Covers">
+                        <i class="fab fa-whatsapp"></i>
+                        Request Quote on WhatsApp
+                    </button>
+                </div>
+            </div>
+           <div class="product-card" data-category="truck">
+                <div class="product-image" style="background-image:url('Cover1.jpeg')"></div>
+                <div class="product-details">
+                    <h3>Truck & Cargo Covers</h3>
+                    <p>Heavy-duty waterproof tarpaulins for transport and logistics.</p>
+                  
+                    <ul class="product-features">
+                        <li><i class="fas fa-check"></i> Waterproof material</li>
+                        <li><i class="fas fa-check"></i> Tear-resistant</li>
+                        <li><i class="fas fa-check"></i> Custom sizing</li>
+                        <li><i class="fas fa-check"></i> 2-year warranty</li>
+                    </ul>
+                    <button class="order-btn" data-product="Truck & Cargo Covers">
+                        <i class="fab fa-whatsapp"></i>
+                        Request Quote on WhatsApp
+                    </button>
+                </div>
+            </div>
+              <div class="product-card" data-category="truck">
+                <div class="product-image" style="background-image:url('Cover7.jpeg')"></div>
+                <div class="product-details">
+                    <h3>Truck & Cargo Covers</h3>
+                    <p>Heavy-duty waterproof tarpaulins for transport and logistics.</p>
+                  
+                    <ul class="product-features">
+                        <li><i class="fas fa-check"></i> Waterproof material</li>
+                        <li><i class="fas fa-check"></i> Tear-resistant</li>
+                        <li><i class="fas fa-check"></i> Custom sizing</li>
+                        <li><i class="fas fa-check"></i> 2-year warranty</li>
+                    </ul>
+                    <button class="order-btn" data-product="Truck & Cargo Covers">
+                        <i class="fab fa-whatsapp"></i>
+                        Request Quote on WhatsApp
+                    </button>
+                </div>
+            </div>
+              <div class="product-card" data-category="truck">
+                <div class="product-image" style="background-image:url('Cover3.jpeg')"></div>
+                <div class="product-details">
+                    <h3>Truck & Cargo Covers</h3>
+                    <p>Heavy-duty waterproof tarpaulins for transport and logistics.</p>
+                  
+                    <ul class="product-features">
+                        <li><i class="fas fa-check"></i> Waterproof material</li>
+                        <li><i class="fas fa-check"></i> Tear-resistant</li>
+                        <li><i class="fas fa-check"></i> Custom sizing</li>
+                        <li><i class="fas fa-check"></i> 2-year warranty</li>
+                    </ul>
+                    <button class="order-btn" data-product="Truck & Cargo Covers">
+                        <i class="fab fa-whatsapp"></i>
+                        Request Quote on WhatsApp
+                    </button>
+                </div>
+            </div>
+              <div class="product-card" data-category="truck">
+                <div class="product-image" style="background-image:url('Cover8.jpeg')"></div>
+                <div class="product-details">
+                    <h3>Truck & Cargo Covers</h3>
+                    <p>Heavy-duty waterproof tarpaulins for transport and logistics.</p>
+                  
+                    <ul class="product-features">
+                        <li><i class="fas fa-check"></i> Waterproof material</li>
+                        <li><i class="fas fa-check"></i> Tear-resistant</li>
+                        <li><i class="fas fa-check"></i> Custom sizing</li>
+                        <li><i class="fas fa-check"></i> 2-year warranty</li>
+                    </ul>
+                    <button class="order-btn" data-product="Truck & Cargo Covers">
+                        <i class="fab fa-whatsapp"></i>
+                        Request Quote on WhatsApp
+                    </button>
+                </div>
+            </div>
+              <div class="product-card" data-category="truck">
+                <div class="product-image" style="background-image:url('Cover4.jpeg')"></div>
+                <div class="product-details">
+                    <h3>Truck & Cargo Covers</h3>
+                    <p>Heavy-duty waterproof tarpaulins for transport and logistics.</p>
+                  
+                    <ul class="product-features">
+                        <li><i class="fas fa-check"></i> Waterproof material</li>
+                        <li><i class="fas fa-check"></i> Tear-resistant</li>
+                        <li><i class="fas fa-check"></i> Custom sizing</li>
+                        <li><i class="fas fa-check"></i> 2-year warranty</li>
+                    </ul>
+                    <button class="order-btn" data-product="Truck & Cargo Covers">
+                        <i class="fab fa-whatsapp"></i>
+                        Request Quote on WhatsApp
+                    </button>
+                </div>
+            </div>
+               
+            
+            
+            <!-- Storage Tent -->
+            <div class="product-card" data-category="storage">
+                <div class="product-image" style="background-image:url('Industrial1.jpeg')"></div>
+                <div class="product-details">
+                    <h3>Industrial / Storage Tent</h3>
+                    <p>Large capacity tents suitable for warehouses and storage spaces.</p>
+                    
+                    <ul class="product-features">
+                        <li><i class="fas fa-check"></i> Heavy-duty construction</li>
+                        <li><i class="fas fa-check"></i> Weather-resistant</li>
+                        <li><i class="fas fa-check"></i> Various sizes available</li>
+                        <li><i class="fas fa-check"></i> 3-year warranty</li>
+                    </ul>
+                    <button class="order-btn" data-product="Industrial / Storage Tent">
+                        <i class="fab fa-whatsapp"></i>
+                        Request Quote on WhatsApp
+                    </button>
+                </div>
+            </div>
+            
+               <div class="product-card" data-category="storage">
+                <div class="product-image" style="background-image:url('Industrial8.jpeg')"></div>
+                <div class="product-details">
+                    <h3>Industrial / Storage Tent</h3>
+                    <p>Large capacity tents suitable for warehouses and storage spaces.</p>
+                    
+                    <ul class="product-features">
+                        <li><i class="fas fa-check"></i> Heavy-duty construction</li>
+                        <li><i class="fas fa-check"></i> Weather-resistant</li>
+                        <li><i class="fas fa-check"></i> Various sizes available</li>
+                        <li><i class="fas fa-check"></i> 3-year warranty</li>
+                    </ul>
+                    <button class="order-btn" data-product="Industrial / Storage Tent">
+                        <i class="fab fa-whatsapp"></i>
+                        Request Quote on WhatsApp
+                    </button>
+                </div>
+            </div>
+               <div class="product-card" data-category="storage">
+                <div class="product-image" style="background-image:url('Industrial3.jpeg')"></div>
+                <div class="product-details">
+                    <h3>Industrial / Storage Tent</h3>
+                    <p>Large capacity tents suitable for warehouses and storage spaces.</p>
+                    
+                    <ul class="product-features">
+                        <li><i class="fas fa-check"></i> Heavy-duty construction</li>
+                        <li><i class="fas fa-check"></i> Weather-resistant</li>
+                        <li><i class="fas fa-check"></i> Various sizes available</li>
+                        <li><i class="fas fa-check"></i> 3-year warranty</li>
+                    </ul>
+                    <button class="order-btn" data-product="Industrial / Storage Tent">
+                        <i class="fab fa-whatsapp"></i>
+                        Request Quote on WhatsApp
+                    </button>
+                </div>
+            </div>
+               <div class="product-card" data-category="storage">
+                <div class="product-image" style="background-image:url('Industrial4.jpeg')"></div>
+                <div class="product-details">
+                    <h3>Industrial / Storage Tent</h3>
+                    <p>Large capacity tents suitable for warehouses and storage spaces.</p>
+                    
+                    <ul class="product-features">
+                        <li><i class="fas fa-check"></i> Heavy-duty construction</li>
+                        <li><i class="fas fa-check"></i> Weather-resistant</li>
+                        <li><i class="fas fa-check"></i> Various sizes available</li>
+                        <li><i class="fas fa-check"></i> 3-year warranty</li>
+                    </ul>
+                    <button class="order-btn" data-product="Industrial / Storage Tent">
+                        <i class="fab fa-whatsapp"></i>
+                        Request Quote on WhatsApp
+                    </button>
+                </div>
+            </div>
+               <div class="product-card" data-category="storage">
+                <div class="product-image" style="background-image:url('Industrial6.jpeg')"></div>
+                <div class="product-details">
+                    <h3>Industrial / Storage Tent</h3>
+                    <p>Large capacity tents suitable for warehouses and storage spaces.</p>
+                    
+                    <ul class="product-features">
+                        <li><i class="fas fa-check"></i> Heavy-duty construction</li>
+                        <li><i class="fas fa-check"></i> Weather-resistant</li>
+                        <li><i class="fas fa-check"></i> Various sizes available</li>
+                        <li><i class="fas fa-check"></i> 3-year warranty</li>
+                    </ul>
+                    <button class="order-btn" data-product="Industrial / Storage Tent">
+                        <i class="fab fa-whatsapp"></i>
+                        Request Quote on WhatsApp
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Aluminium Door -->
+            <div class="product-card" data-category="aluminium">
+                <div class="product-image" style="background-image:url('Al6.jpeg')"></div>
+                <div class="product-details">
+                    <h3>Aluminium Sliding Doors</h3>
+                    <p>Modern and secure sliding door systems for homes and offices.</p>
+                    
+                    <ul class="product-features">
+                        <li><i class="fas fa-check"></i> High-grade aluminium</li>
+                        <li><i class="fas fa-check"></i> Smooth sliding mechanism</li>
+                        <li><i class="fas fa-check"></i> Enhanced security</li>
+                        <li><i class="fas fa-check"></i> 5-year warranty</li>
+                    </ul>
+                    <button class="order-btn" data-product="Aluminium Sliding Doors">
+                        <i class="fab fa-whatsapp"></i>
+                        Request Quote on WhatsApp
+                    </button>
+                </div>
+            </div>
+                        <div class="product-card" data-category="aluminium">
+                <div class="product-image" style="background-image:url('Al2.jpg')"></div>
+                <div class="product-details">
+                    <h3>Aluminium Sliding Doors</h3>
+                    <p>Modern and secure sliding door systems for homes and offices.</p>
+                    
+                    <ul class="product-features">
+                        <li><i class="fas fa-check"></i> High-grade aluminium</li>
+                        <li><i class="fas fa-check"></i> Smooth sliding mechanism</li>
+                        <li><i class="fas fa-check"></i> Enhanced security</li>
+                        <li><i class="fas fa-check"></i> 5-year warranty</li>
+                    </ul>
+                    <button class="order-btn" data-product="Aluminium Sliding Doors">
+                        <i class="fab fa-whatsapp"></i>
+                        Request Quote on WhatsApp
+                    </button>
+                </div>
+            </div>
+                        <div class="product-card" data-category="aluminium">
+                <div class="product-image" style="background-image:url('Tent6.jpeg')"></div>
+                <div class="product-details">
+                    <h3>Aluminium Sliding Doors</h3>
+                    <p>Modern and secure sliding door systems for homes and offices.</p>
+                    
+                    <ul class="product-features">
+                        <li><i class="fas fa-check"></i> High-grade aluminium</li>
+                        <li><i class="fas fa-check"></i> Smooth sliding mechanism</li>
+                        <li><i class="fas fa-check"></i> Enhanced security</li>
+                        <li><i class="fas fa-check"></i> 5-year warranty</li>
+                    </ul>
+                    <button class="order-btn" data-product="Aluminium Sliding Doors">
+                        <i class="fab fa-whatsapp"></i>
+                        Request Quote on WhatsApp
+                    </button>
+                </div>
+            </div>
+                        <div class="product-card" data-category="aluminium">
+                <div class="product-image" style="background-image:url('Tent5.jpeg')"></div>
+                <div class="product-details">
+                    <h3>Aluminium Sliding Doors</h3>
+                    <p>Modern and secure sliding door systems for homes and offices.</p>
+                    
+                    <ul class="product-features">
+                        <li><i class="fas fa-check"></i> High-grade aluminium</li>
+                        <li><i class="fas fa-check"></i> Smooth sliding mechanism</li>
+                        <li><i class="fas fa-check"></i> Enhanced security</li>
+                        <li><i class="fas fa-check"></i> 5-year warranty</li>
+                    </ul>
+                    <button class="order-btn" data-product="Aluminium Sliding Doors">
+                        <i class="fab fa-whatsapp"></i>
+                        Request Quote on WhatsApp
+                    </button>
+                </div>
+            </div>
+                        <div class="product-card" data-category="aluminium">
+                <div class="product-image" style="background-image:url('Fab5.jpeg')"></div>
+                <div class="product-details">
+                    <h3>Aluminium Sliding Doors</h3>
+                    <p>Modern and secure sliding door systems for homes and offices.</p>
+                    
+                    <ul class="product-features">
+                        <li><i class="fas fa-check"></i> High-grade aluminium</li>
+                        <li><i class="fas fa-check"></i> Smooth sliding mechanism</li>
+                        <li><i class="fas fa-check"></i> Enhanced security</li>
+                        <li><i class="fas fa-check"></i> 5-year warranty</li>
+                    </ul>
+                    <button class="order-btn" data-product="Aluminium Sliding Doors">
+                        <i class="fab fa-whatsapp"></i>
+                        Request Quote on WhatsApp
+                    </button>
+                </div>
+            </div>
+            <!-- Aluminium Window -->
+            <div class="product-card" data-category="aluminium">
+                <div class="product-image" style="background-image:url('Fab6.jpeg')"></div>
+                <div class="product-details">
+                    <h3>Aluminium Windows</h3>
+                    <p>Energy-efficient windows for both residential and commercial use.</p>
+                    
+                    <ul class="product-features">
+                        <li><i class="fas fa-check"></i> Thermal insulation</li>
+                        <li><i class="fas fa-check"></i> Noise reduction</li>
+                        <li><i class="fas fa-check"></i> Easy maintenance</li>
+                        <li><i class="fas fa-check"></i> 5-year warranty</li>
+                    </ul>
+                    <button class="order-btn" data-product="Aluminium Windows">
+                        <i class="fab fa-whatsapp"></i>
+                        Request Quote on WhatsApp
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Custom -->
+            <div class="product-card" data-category="custom">
+                <div class="product-image" style="background-image:url('Home64.jpg')"></div>
+                <div class="product-details">
+                    <h3>Custom Design & Branding</h3>
+                    <p>Personalized tents or aluminium products branded to your needs.</p>
+                    
+                    <ul class="product-features">
+                        <li><i class="fas fa-check"></i> Free consultation</li>
+                        <li><i class="fas fa-check"></i> Custom designs</li>
+                        <li><i class="fas fa-check"></i> Professional installation</li>
+                        <li><i class="fas fa-check"></i> Quality guarantee</li>
+                    </ul>
+                    <button class="order-btn" data-product="Custom Design & Branding">
+                        <i class="fab fa-whatsapp"></i>
+                        Request Quote on WhatsApp
+                    </button>
+                </div>
+            </div>
+            
+            
+              <div class="product-card" data-category="custom">
+                <div class="product-image" style="background-image:url('Home45.jpg')"></div>
+                <div class="product-details">
+                    <h3>Custom Design & Branding</h3>
+                    <p>Personalized tents or aluminium products branded to your needs.</p>
+                    
+                    <ul class="product-features">
+                        <li><i class="fas fa-check"></i> Free consultation</li>
+                        <li><i class="fas fa-check"></i> Custom designs</li>
+                        <li><i class="fas fa-check"></i> Professional installation</li>
+                        <li><i class="fas fa-check"></i> Quality guarantee</li>
+                    </ul>
+                    <button class="order-btn" data-product="Custom Design & Branding">
+                        <i class="fab fa-whatsapp"></i>
+                        Request Quote on WhatsApp
+                    </button>
+                </div>
+            </div>
+                <div class="product-card" data-category="custom">
+                <div class="product-image" style="background-image:url('Home71.jpg')"></div>
+                <div class="product-details">
+                    <h3>Custom Design & Branding</h3>
+                    <p>Personalized tents or aluminium products branded to your needs.</p>
+                    
+                    <ul class="product-features">
+                        <li><i class="fas fa-check"></i> Free consultation</li>
+                        <li><i class="fas fa-check"></i> Custom designs</li>
+                        <li><i class="fas fa-check"></i> Professional installation</li>
+                        <li><i class="fas fa-check"></i> Quality guarantee</li>
+                    </ul>
+                    <button class="order-btn" data-product="Custom Design & Branding">
+                        <i class="fab fa-whatsapp"></i>
+                        Request Quote on WhatsApp
+                    </button>
+                </div>
+            </div>
+                <div class="product-card" data-category="custom">
+                <div class="product-image" style="background-image:url('Home59.jpg')"></div>
+                <div class="product-details">
+                    <h3>Custom Design & Branding</h3>
+                    <p>Personalized tents or aluminium products branded to your needs.</p>
+                    
+                    <ul class="product-features">
+                        <li><i class="fas fa-check"></i> Free consultation</li>
+                        <li><i class="fas fa-check"></i> Custom designs</li>
+                        <li><i class="fas fa-check"></i> Professional installation</li>
+                        <li><i class="fas fa-check"></i> Quality guarantee</li>
+                    </ul>
+                    <button class="order-btn" data-product="Custom Design & Branding">
+                        <i class="fab fa-whatsapp"></i>
+                        Request Quote on WhatsApp
+                    </button>
+                </div>
+            </div>
+                <div class="product-card" data-category="custom">
+                <div class="product-image" style="background-image:url('Home66.jpg')"></div>
+                <div class="product-details">
+                    <h3>Custom Design & Branding</h3>
+                    <p>Personalized tents or aluminium products branded to your needs.</p>
+                    
+                    <ul class="product-features">
+                        <li><i class="fas fa-check"></i> Free consultation</li>
+                        <li><i class="fas fa-check"></i> Custom designs</li>
+                        <li><i class="fas fa-check"></i> Professional installation</li>
+                        <li><i class="fas fa-check"></i> Quality guarantee</li>
+                    </ul>
+                    <button class="order-btn" data-product="Custom Design & Branding">
+                        <i class="fab fa-whatsapp"></i>
+                        Request Quote on WhatsApp
+                    </button>
+                </div>
+            </div>
+            
+              <div class="product-card" data-category="custom">
+                <div class="product-image" style="background-image:url('Windows.jpeg')"></div>
+                <div class="product-details">
+                    <h3>Custom Design & Branding</h3>
+                    <p>Personalized tents or aluminium products branded to your needs.</p>
+                    
+                    <ul class="product-features">
+                        <li><i class="fas fa-check"></i> Free consultation</li>
+                        <li><i class="fas fa-check"></i> Custom designs</li>
+                        <li><i class="fas fa-check"></i> Professional installation</li>
+                        <li><i class="fas fa-check"></i> Quality guarantee</li>
+                    </ul>
+                    <button class="order-btn" data-product="Custom Design & Branding">
+                        <i class="fab fa-whatsapp"></i>
+                        Request Quote on WhatsApp
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Rent & Hire Section -->
+    <section class="rental" id="rental">
+        <div class="section-header">
+            <h2>Rent Our Premium Products</h2>
+            <p>Need tents or aluminium solutions for a short-term event? We offer flexible rental options</p>
+        </div>
+        
+        <div class="rental-content">
+            <div class="rental-info">
+                <div class="rental-text">
+                    <h3>Flexible Rental Solutions</h3>
+                    <p>Whether you're hosting a wedding, corporate event, or need temporary structures, our rental services provide the perfect solution without the long-term commitment.</p>
+                    
+                    <div class="rental-features">
+                        <div class="rental-feature">
+                            <i class="fas fa-calendar-check"></i>
+                            <div>
+                                <h4>Flexible Duration</h4>
+                                <p>Rent for a day, week, or month - we accommodate your timeline</p>
+                            </div>
+                        </div>
+                        
+                        <div class="rental-feature">
+                            <i class="fas fa-truck"></i>
+                            <div>
+                                <h4>Delivery & Setup</h4>
+                                <p>We deliver, install, and dismantle - you just enjoy the event</p>
+                            </div>
+                        </div>
+                        
+                        <div class="rental-feature">
+                            <i class="fas fa-shield-alt"></i>
+                            <div>
+                                <h4>Full Support</h4>
+                                <p>Technical support throughout your rental period</p>
+                            </div>
+                        </div>
+                        
+                        <div class="rental-feature">
+                            <i class="fas fa-tools"></i>
+                            <div>
+                                <h4>Maintenance Included</h4>
+                                <p>We handle all maintenance during the rental period</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="rental-contact">
+                    <div class="rental-card">
+                        <h3>Get Rental Quote</h3>
+                        <p>Contact us for pricing and availability</p>
+                        
+                        <div class="rental-contact-options">
+                            <button class="rental-contact-btn whatsapp-btn" onclick="openRentalWhatsApp()">
+                                <i class="fab fa-whatsapp"></i>
+                                WhatsApp for Rental
+                            </button>
+                            
+                            <button class="rental-contact-btn call-btn" onclick="callForRental()">
+                                <i class="fas fa-phone"></i>
+                                Call for Rental Info
+                            </button>
+                        </div>
+                        
+                        <div class="rental-note">
+                            <p><strong>Note:</strong> Please provide details about:</p>
+                            <ul>
+                                <li>Type of product needed</li>
+                                <li>Event dates</li>
+                                <li>Approximate size/quantity</li>
+                                <li>Location for setup</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="rental-products">
+                <h3>Popular Rental Items</h3>
+                <div class="rental-items-grid">
+                    <div class="rental-item">
+                        <div class="rental-item-icon">
+                            <i class="fas fa-umbrella-beach"></i>
+                        </div>
+                        <h4>Event Tents & Chairs</h4>
+                        <p>Perfect for weddings, parties, and corporate events</p>
+                        <div class="rental-price">From UGX 50,000/day</div>
+                    </div>
+                    
+                    <div class="rental-item">
+                        <div class="rental-item-icon">
+                            <i class="fas fa-car"></i>
+                        </div>
+                        <h4>Car Parking Tents</h4>
+                        <p>Vehicle protection for events or temporary needs</p>
+                        <div class="rental-price">From UGX 80,000/day</div>
+                    </div>
+                    
+                    <div class="rental-item">
+                        <div class="rental-item-icon">
+                            <i class="fas fa-truck-moving"></i>
+                        </div>
+                        <h4>Truck Covers</h4>
+                        <p>Temporary covers for cargo protection</p>
+                        <div class="rental-price">From UGX 30,000/day</div>
+                    </div>
+                    
+                    <div class="rental-item">
+                        <div class="rental-item-icon">
+                            <i class="fas fa-border-all"></i>
+                        </div>
+                        <h4>Custom Solutions</h4>
+                        <p>Tailored rental solutions for unique requirements</p>
+                        <div class="rental-price">Custom pricing</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features" id="features">
+        <div class="features-content">
+            <div class="section-header">
+                <h2>Why Choose First Choice?</h2>
+                <p>We're committed to delivering exceptional quality and service</p>
+            </div>
+            
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-award"></i>
+                    </div>
+                    <h3>Premium Quality</h3>
+                    <p>We use only the highest quality materials and craftsmanship in all our products</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-tools"></i>
+                    </div>
+                    <h3>Expert Craftsmanship</h3>
+                    <p>Our skilled team has years of experience in tent and aluminium fabrication</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Comprehensive Warranty</h3>
+                    <p>All our products come with extensive warranties for your peace of mind</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-shipping-fast"></i>
+                    </div>
+                    <h3>Nationwide Installation</h3>
+                    <p>We deliver and install our products across Uganda with professional service</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Testimonials -->
+    <section class="testimonials" id="testimonials">
+        <div class="section-header">
+            <h2>What Our Clients Say</h2>
+            <p>Hear from satisfied customers across Uganda</p>
+        </div>
+        
+        <div class="testimonial-grid">
+            <div class="testimonial-card">
+                <p class="testimonial-text">"First Choice provided the perfect wedding tent for our special day. The quality was exceptional and the setup was professional. Highly recommended!"</p>
+                <div class="testimonial-author">
+                    <div class="author-avatar">SM</div>
+                    <div class="author-info">
+                        <h4>Sarah M.</h4>
+                        <p>Kampala</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="testimonial-card">
+                <p class="testimonial-text">"The aluminium windows and doors they installed in our office have transformed the space. Great quality and professional service from start to finish."</p>
+                <div class="testimonial-author">
+                    <div class="author-avatar">JK</div>
+                    <div class="author-info">
+                        <h4>John K.</h4>
+                        <p>Mukono</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="testimonial-card">
+                <p class="testimonial-text">"We've used First Choice for multiple projects and they never disappoint. Their car parking tents are durable and withstand all weather conditions."</p>
+                <div class="testimonial-author">
+                    <div class="author-avatar">AN</div>
+                    <div class="author-info">
+                        <h4>Andrew N.</h4>
+                        <p>Arua</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="cta-content">
+            <h2>Ready to Get Started?</h2>
+            <p>Contact us today for a free consultation and quote</p>
+            <button class="btn-primary" onclick="openWhatsApp()">
+                <i class="fab fa-whatsapp"></i>
+                Chat with Us on WhatsApp
+            </button>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer" id="contact">
+        <div class="footer-content">
+            <div class="footer-column">
+                <h3>First Choice</h3>
+                <p>Uganda's leading manufacturer of premium tents and aluminium solutions.</p>
+                <div class="social-links">
+                    <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-whatsapp"></i></a>
+                </div>
+            </div>
+            
+            <div class="footer-column">
+                <h3>Quick Links</h3>
+                <ul class="footer-links">
+                    <li><a href="#products">Products</a></li>
+                    <li><a href="#features">Why Choose Us</a></li>
+                    <li><a href="#testimonials">Testimonials</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-column">
+                <h3>Products</h3>
+                <ul class="footer-links">
+                    <li><a href="#products">Event Tents</a></li>
+                    <li><a href="#products">Car Parking Tents</a></li>
+                    <li><a href="#products">Aluminium Doors</a></li>
+                    <li><a href="#products">Aluminium Windows</a></li>
+                    <li><a href="#products">Custom Solutions</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-column">
+                <h3>Contact Us</h3>
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Mukono & Arua, Uganda</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <span>+256 706 028 299</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <span>firstchoicetents2025@gmail.com</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="copyright">
+            &copy; 2025 First Choice Tents & Aluminium Fabrication. All rights reserved.
+        </div>
+    </footer>
+
+    <!-- WhatsApp Float -->
+    <a href="https://wa.me/256706028299?text=Hi%20First%20Choice%2C%20I'm%20interested%20in%20your%20products" class="whatsapp-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <script>
+        // Mobile menu functionality
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const closeMenu = document.getElementById('closeMenu');
+        
+        function toggleMobileMenu() {
+            mobileMenu.classList.toggle('active');
+        }
+        
+        function closeMobileMenu() {
+            mobileMenu.classList.remove('active');
+        }
+        
+        mobileMenuBtn.addEventListener('click', toggleMobileMenu);
+        closeMenu.addEventListener('click', closeMobileMenu);
+        
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('.mobile-menu a').forEach(link => {
+            link.addEventListener('click', closeMobileMenu);
+        });
+        
+        // Filter products - improved version from mj.html
+        document.querySelectorAll('.category-btn').forEach(button => {
+            button.addEventListener('click', () => {
+                document.querySelectorAll('.category-btn').forEach(btn => btn.classList.remove('active'));
+                button.classList.add('active');
+                const category = button.dataset.category;
+                document.querySelectorAll('.product-card').forEach(card => {
+                    card.style.display = (category === 'all' || card.dataset.category === category) ? 'flex' : 'none';
+                });
+            });
+        });
+        
+        // WhatsApp order - simplified version from mj.html
+        document.querySelectorAll('.order-btn').forEach(button => {
+            button.addEventListener('click', () => {
+                const product = button.dataset.product;
+                const msg = `Hi First Choice, I would like to request a quote for: ${product}.`;
+                window.open(`https://wa.me/256706028299?text=${encodeURIComponent(msg)}`, '_blank');
+            });
+        });
+        
+        // WhatsApp function
+        function openWhatsApp() {
+            const msg = "Hi First Choice, I'm interested in your tents and aluminium products.";
+            window.open(`https://wa.me/256706028299?text=${encodeURIComponent(msg)}`, '_blank');
+        }
+        
+        // Scroll to products
+        function scrollToProducts() {
+            document.getElementById('products').scrollIntoView({
+                behavior: 'smooth'
+            });
+        }
+        
+        // WhatsApp function for rental inquiries
+        function openRentalWhatsApp() {
+            const message = "Hi First Choice, I'm interested in renting your products. Please provide rental information and pricing.";
+            const encodedMessage = encodeURIComponent(message);
+            window.open(`https://wa.me/256706028299?text=${encodedMessage}`, '_blank');
+        }
+        
+        // Call function for rental inquiries
+        function callForRental() {
+            window.open('tel:+256706028299', '_self');
+        }
+        
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
