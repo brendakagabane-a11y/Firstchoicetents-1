@@ -1,0 +1,1106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | First Choice Tents & Aluminium</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #FF6B35;
+            --secondary: #004E89;
+            --accent: #F7931E;
+            --dark: #1A1A2E;
+            --light: #F8F9FA;
+            --text: #2C3E50;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text);
+            overflow-x: hidden;
+        }
+
+        .page-hero {
+            background-image: 
+                linear-gradient(
+                    rgba(0, 0, 0, 0.6),
+                    rgba(0, 0, 0, 0.6)
+                ),
+                url('Pick19.jpg');
+            background-size: cover; 
+            background-position: center center; 
+            background-repeat: no-repeat;
+            min-height: 600px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            padding: 2rem;
+        }
+
+        .hero-content h1 {
+            font-size: clamp(2.5rem, 4vw, 3.5rem);
+            margin-bottom: 1.5rem;
+            font-weight: 800;
+        }
+
+        .hero-content p {
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin: 0 auto;
+            opacity: 0.9;
+        }
+
+        /* Contact Form Section */
+        .contact-form-section {
+            padding: 8rem 2rem;
+            background: var(--dark);
+            position: relative;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-title {
+            font-size: clamp(2.5rem, 4vw, 3.5rem);
+            color: white;
+            margin-bottom: 1rem;
+            font-weight: 800;
+        }
+
+        .section-subtitle {
+            font-size: 1.2rem;
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        .form-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 30px;
+            padding: 3rem;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        }
+
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .form-group label {
+            color: white;
+            font-weight: 600;
+            font-size: 1.05rem;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            padding: 1rem 1.5rem;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            font-size: 1rem;
+            color: white;
+            transition: all 0.3s ease;
+            font-family: inherit;
+        }
+
+        .form-group textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        .form-group input::placeholder,
+        .form-group textarea::placeholder {
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary);
+            background: rgba(255, 255, 255, 0.15);
+        }
+
+        .form-group select {
+            cursor: pointer;
+        }
+
+        .form-group select option {
+            background: var(--dark);
+            color: white;
+        }
+
+        .btn {
+            padding: 1.2rem 2.5rem;
+            border-radius: 60px;
+            font-size: 1.1rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.4s ease;
+            border: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            color: white;
+            box-shadow: 0 10px 30px rgba(255, 107, 53, 0.4);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(255, 107, 53, 0.6);
+        }
+
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-3px);
+        }
+
+        .form-actions {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .contact-info-panel {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(20px);
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            border-radius: 25px;
+            padding: 3rem 2.5rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 2rem;
+        }
+
+        .contact-info-panel h3 {
+            color: white;
+            font-size: 1.8rem;
+            font-weight: 700;
+        }
+
+        .contact-details {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            color: white;
+        }
+
+        .contact-item i {
+            font-size: 1.5rem;
+            color: var(--accent);
+            width: 30px;
+        }
+
+        .contact-item p {
+            font-size: 1.05rem;
+        }
+
+        .contact-item a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .contact-item a:hover {
+            color: var(--accent);
+        }
+
+        .response-time {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 1.5rem;
+            border-radius: 15px;
+            text-align: center;
+            margin-top: 1rem;
+        }
+
+        .response-time h4 {
+            color: var(--accent);
+            margin-bottom: 0.5rem;
+            font-size: 1.2rem;
+        }
+
+        .response-time p {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 0.95rem;
+        }
+
+        /* Contact Info Section */
+        .contact-section {
+            padding: 8rem 2rem;
+            background: white;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2.5rem;
+            margin-top: 4rem;
+        }
+
+        .contact-card {
+            background: var(--light);
+            padding: 3rem;
+            border-radius: 25px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .contact-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(90deg, var(--primary), var(--accent));
+            transform: scaleX(0);
+            transition: transform 0.4s ease;
+        }
+
+        .contact-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+        }
+
+        .contact-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .contact-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 10px 30px rgba(255, 107, 53, 0.3);
+        }
+
+        .contact-card h3 {
+            font-size: 1.8rem;
+            color: var(--secondary);
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .contact-card p {
+            color: #666;
+            line-height: 1.8;
+            margin-bottom: 0.8rem;
+            font-size: 1.05rem;
+        }
+
+        .contact-card a {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        .contact-card a:hover {
+            color: var(--accent);
+        }
+
+        .contact-details {
+            margin-top: 1.5rem;
+            padding-top: 1.5rem;
+            border-top: 2px solid #ddd;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            margin-bottom: 0.8rem;
+            font-weight: 600;
+            color: var(--text);
+        }
+
+        /* Map Section */
+        .map-section {
+            padding: 0 2rem 8rem;
+            background: white;
+        }
+
+        .map-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+            gap: 2.5rem;
+        }
+
+        .map-card {
+            border-radius: 25px;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+            height: 400px;
+            background: var(--light);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #999;
+        }
+
+        /* FAQ Section */
+        .faq-section {
+            padding: 8rem 2rem;
+            background: var(--light);
+        }
+
+        .faq-container {
+            max-width: 900px;
+            margin: 4rem auto 0;
+        }
+
+        .faq-item {
+            background: white;
+            margin-bottom: 1.5rem;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+        }
+
+        .faq-item:hover {
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+        }
+
+        .faq-question {
+            padding: 2rem 2.5rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 700;
+            font-size: 1.15rem;
+            color: var(--secondary);
+            transition: all 0.3s ease;
+        }
+
+        .faq-question:hover {
+            color: var(--primary);
+        }
+
+        .faq-icon {
+            font-size: 1.5rem;
+            transition: transform 0.3s ease;
+            color: var(--primary);
+        }
+
+        .faq-item.active .faq-icon {
+            transform: rotate(180deg);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease, padding 0.4s ease;
+            padding: 0 2.5rem;
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 500px;
+            padding: 0 2.5rem 2rem;
+        }
+
+        .faq-answer p {
+            color: #666;
+            line-height: 1.8;
+            font-size: 1.05rem;
+        }
+
+        /* CTA Section */
+        .final-cta {
+            padding: 8rem 2rem;
+            background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+            text-align: center;
+            color: white;
+        }
+
+        .final-cta h2 {
+            font-size: clamp(2rem, 4vw, 3.5rem);
+            margin-bottom: 1.5rem;
+            font-weight: 800;
+        }
+
+        .final-cta p {
+            font-size: 1.4rem;
+            margin-bottom: 3rem;
+            opacity: 0.95;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+            margin-top: 3rem;
+        }
+
+        .social-link {
+            width: 60px;
+            height: 60px;
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .social-link:hover {
+            background: white;
+            color: var(--primary);
+            transform: translateY(-5px);
+        }
+
+        /* WhatsApp Float */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 70px;
+            height: 70px;
+            background: #25D366;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.2rem;
+            color: white;
+            box-shadow: 0 10px 40px rgba(37, 211, 102, 0.5);
+            z-index: 999;
+            text-decoration: none;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+
+        /* Footer */
+        footer {
+            background: var(--dark);
+            color: white;
+            padding: 4rem 2rem 2rem;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2.5rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-col h3 {
+            color: white;
+            margin-bottom: 1.5rem;
+            font-size: 1.4rem;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.8rem;
+        }
+
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--accent);
+        }
+
+        .footer-contact li {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1.2rem;
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .footer-contact i {
+            color: var(--accent);
+            width: 20px;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        /* Responsive */
+        @media (max-width: 968px) {
+            .form-container {
+                grid-template-columns: 1fr;
+            }
+
+            .map-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .map-card {
+                height: 300px;
+            }
+
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background: rgba(26, 26, 46, 0.98);
+                backdrop-filter: blur(20px);
+                flex-direction: column;
+                padding: 2rem;
+                gap: 1.5rem;
+            }
+
+            .nav-links.show {
+                display: flex;
+            }
+
+            .mobile-menu {
+                display: block;
+            }
+
+            .page-hero {
+                padding: 10rem 1.5rem 5rem;
+            }
+
+            .form-actions {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav id="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <img src="logo1.png" alt="First Choice & aluminium Fabrication Logo" class="logo-image">
+            </a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="market.html">Marketplace</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="support.html">AI Support</a></li>
+                <li><a href="resources.html">Resources & Blog</a></li>
+                <li><a href="Portfolio.html">Portfolio</a></li>
+            </ul>
+            <div class="mobile-menu" id="mobileMenu">☰</div>
+        </div>
+    </nav>
+
+    <header class="page-hero">
+        <div class="hero-content">
+            <h1>Let's Start Your Project</h1>
+            <p>Get in touch with our expert team in Mukono or Arua. We're ready to bring your vision to life.</p>
+        </div>
+    </header>
+
+    <section class="contact-form-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Get In Touch</h2>
+                <p class="section-subtitle">Fill out the form below and we'll respond promptly via your preferred method</p>
+            </div>
+
+            <div class="form-container">
+                <form class="contact-form" id="contactForm">
+                    <div class="form-group">
+                        <label for="name">Your Name</label>
+                        <input type="text" id="name" placeholder="Enter your full name" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" placeholder="+256 XXX XXX XXX" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" placeholder="Enter your email" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="category">Product Category</label>
+                        <select id="category" required>
+                            <option value="">Select Category</option>
+                            <option value="tent">Tents & Shelters</option>
+                            <option value="aluminium">Aluminium Works</option>
+                            <option value="custom">Custom Solution</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="productType">Specific Product Interest</label>
+                        <select id="productType" required>
+                            <option value="">Choose category first</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Project Details</label>
+                        <textarea id="message" placeholder="Tell us about your project, requirements, timeline, and any specific details..." required></textarea>
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="button" class="btn btn-primary" id="whatsappBtn">
+                            <span>Send via WhatsApp</span>
+                        </button>
+                        <button type="button" class="btn btn-secondary" id="emailBtn">
+                            <span>Send via Email</span>
+                        </button>
+                    </div>
+                </form>
+
+                <div class="contact-info-panel">
+                    <h3>Contact Information</h3>
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <i>📞</i>
+                            <div>
+                                <p><a href="tel:+256706028299">+256 706 028 299</a></p>
+                                <p><a href="tel:+256787028099">+256 787 028 099</a></p>
+                                <p><a href="tel:+256755550827">+256 755 550 827</a></p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i>📧</i>
+                            <div>
+                                <p><a href="mailto:firstchoicetents2025@gmail.com">firstchoicetents2025@gmail.com</a></p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i>🏢</i>
+                            <div>
+                                <p><strong>Mukono Branch:</strong> Opposite BE Energy Petrol Station, next to Jobia Hotel</p>
+                                <p><strong>Arua Branch:</strong> Baluku Cell, next to Arua Primary School, Sudan Road</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="response-time">
+                        <h4>Quick Response</h4>
+                        <p>We typically respond within 1 hour during business hours (8AM - 6PM, Mon-Sat)</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title" style="color: var(--dark);">Our Locations & Contact</h2>
+                <p class="section-subtitle" style="color: #666;">Visit us or reach out through your preferred channel</p>
+            </div>
+
+            <div class="contact-grid">
+                <div class="contact-card">
+                    <div class="contact-icon">🏢</div>
+                    <h3>Mukono Branch (HQ)</h3>
+                    <p>Opposite BE Energy Petrol Station, next to Jobia Hotel</p>
+                    <div class="contact-details">
+                        <div class="contact-item">📞 <a href="tel:+256706028299">+256 706 028 299</a></div>
+                        <div class="contact-item">📧 <a href="mailto:firstchoicetents2025@gmail.com">Email Us</a></div>
+                        <div class="contact-item">🕐 Mon-Sat: 8AM - 6PM</div>
+                    </div>
+                </div>
+
+                <div class="contact-card">
+                    <div class="contact-icon">🏭</div>
+                    <h3>Arua Branch</h3>
+                    <p>Baluku Cell, next to Arua Primary School, Sudan Road</p>
+                    <div class="contact-details">
+                        <div class="contact-item">📞 <a href="tel:+256787028099">+256 787 028 099</a></div>
+                        <div class="contact-item">📧 <a href="mailto:firstchoicetents2025@gmail.com">Email Us</a></div>
+                        <div class="contact-item">🕐 Mon-Sat: 8AM - 6PM</div>
+                    </div>
+                </div>
+
+                <div class="contact-card">
+                    <div class="contact-icon">💬</div>
+                    <h3>Quick Contact</h3>
+                    <p>Get instant responses through our direct channels</p>
+                    <div class="contact-details">
+                        <div class="contact-item">📱 <a href="https://wa.me/256706028299">WhatsApp Chat</a></div>
+                        <div class="contact-item">📞 <a href="tel:+256755550827">+256 755 550 827</a></div>
+                        <div class="contact-item">⚡ Response: Within 1 hour</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="map-section">
+        <div class="container">
+            <div class="map-grid">
+                <div class="map-card">
+                    📍 **Mukono Location Map**
+                    <iframe 
+                        src="**[YOUR MUKONO EMBED URL HERE]**" 
+                        width="100%" 
+                        height="300" 
+                        style="border:0;" 
+                        allowfullscreen="" 
+                        loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+                <div class="map-card">
+                    📍 **Arua Location Map**
+                    <iframe 
+                        src="**[YOUR ARUA EMBED URL HERE]**" 
+                        width="100%" 
+                        height="300" 
+                        style="border:0;" 
+                        allowfullscreen="" 
+                        loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="faq-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title" style="color: var(--dark);">Frequently Asked Questions</h2>
+                <p class="section-subtitle" style="color: #666;">Quick answers to common questions about our services</p>
+            </div>
+
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>How long does it take to complete a project?</span>
+                        <span class="faq-icon">▼</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Project timelines vary based on complexity. Simple tent installations typically take 1-3 days, while custom aluminium projects may take 1-3 weeks from design to installation. We provide exact timelines during consultation.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Do you offer installation services?</span>
+                        <span class="faq-icon">▼</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes! Professional installation is included with all our products. Our skilled technical teams handle everything from site preparation to final setup, ensuring perfect results every time.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>What areas do you serve?</span>
+                        <span class="faq-icon">▼</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>We serve all of Uganda from our Mukono and Arua branches. We've completed projects nationwide and can handle installations in any region, including remote areas.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Do you offer warranties?</span>
+                        <span class="faq-icon">▼</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Absolutely! All our products come with comprehensive warranties ranging from 1-10 years depending on the product type. We also offer maintenance services to ensure longevity.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Can you create custom designs?</span>
+                        <span class="faq-icon">▼</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Custom design is our specialty! We work closely with you to create solutions that match your exact specifications, budget, and aesthetic preferences. Share your vision and we'll make it reality.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="final-cta">
+        <div class="container">
+            <h2>Ready to Get Started?</h2>
+            <p>Reach out through any channel - we're here to help bring your project to life!</p>
+            
+            <div class="social-links">
+                <a href="https://wa.me/256706028299" class="social-link" title="WhatsApp">💬</a>
+                <a href="tel:+256706028299" class="social-link" title="Call Us">📞</a>
+                <a href="mailto:firstchoicetents2025@gmail.com" class="social-link" title="Email">📧</a>
+                <a href="#" class="social-link" title="Facebook">📘</a>
+                <a href="#" class="social-link" title="Instagram">📷</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col footer-about">
+                    <h3>First Choice</h3>
+                    <p>Uganda's trusted manufacturer of high-quality tents and aluminium products for events, construction, and custom solutions.</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f">📘</i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram">📷</i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter">🐦</i></a>
+                        <a href="#" aria-label="WhatsApp"><i class="fab fa-whatsapp">💬</i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="gallery.html">Gallery</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Our Services</h3>
+                    <ul class="footer-links">
+                        <li><a href="portfolio.html">Tents & Shelters</a></li>
+                        <li><a href="fabricationsblog.html">Aluminium Fabrication</a></li>
+                        <li><a href="contact">Custom Solutions</a></li>
+                        <li><a href="support.html">Installation Services</a></li>
+                        <li><a href="support.html">Maintenance & Repair</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Contact Us</h3>
+                    <ul class="footer-contact">
+                        <li>
+                            <i>📞</i>
+                            <div>
+                                <p>+256 706 028 299</p>
+                                <p>+256 787 028 099</p>
+                                <p>+256 755 550 827</p>
+                            </div>
+                        </li>
+                        <li>
+                            <i>📧</i>
+                            <div>
+                                <p>firstchoicetents2025@gmail.com</p>
+                            </div>
+                        </li>
+                        <li>
+                            <i>📍</i>
+                            <div>
+                                <p><strong>Mukono Branch:</strong> Opposite BE Energy Petrol Station, next to Jobia Hotel</p>
+                                <p><strong>Arua Branch:</strong> Baluku Cell, next to Arua Primary School, Sudan Road</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 First Choice Tents & Aluminium Fabrication. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <a href="https://wa.me/256706028299" class="whatsapp-float" target="_blank">💬</a>
+
+    <script>
+        // Product data
+        const PRODUCT_DATA = {
+            tent: [
+                { name: "Event & Party Marquees" },
+                { name: "Car Parking Tents" },
+                { name: "Truck Covers / Tarpaulins" },
+                { name: "Bar Shades / Canopies" }
+            ],
+            aluminium: [
+                { name: "Aluminium Doors" },
+                { name: "Aluminium Windows" },
+                { name: "Glass Fittings / Partitions" },
+                { name: "Custom Shop Fronts" }
+            ],
+            custom: [
+                { name: "Tailor-Made Design" },
+                { name: "Large Industrial Structure" }
+            ]
+        };
+
+        // Mobile menu
+        const mobileMenu = document.getElementById('mobileMenu');
+        const navLinks = document.getElementById('navLinks');
+        
+        mobileMenu.addEventListener('click', () => {
+            navLinks.classList.toggle('show');
+        });
+
+        // Category change event
+        const categorySelect = document.getElementById('category');
+        const productTypeSelect = document.getElementById('productType');
+
+        categorySelect.addEventListener('change', (e) => {
+            const selectedCategory = e.target.value;
+            productTypeSelect.innerHTML = '<option value="">Select Product</option>';
+            
+            if (selectedCategory && PRODUCT_DATA[selectedCategory]) {
+                const products = PRODUCT_DATA[selectedCategory];
+                products.forEach(product => {
+                    const option = document.createElement('option');
+                    option.value = product.name;
+                    option.textContent = product.name;
+                    productTypeSelect.appendChild(option);
+                });
+            }
+        });
+
+        // Form submission handlers
+        const contactForm = document.getElementById('contactForm');
+        const whatsappBtn = document.getElementById('whatsappBtn');
+        const emailBtn = document.getElementById('emailBtn');
+
+        const validateForm = () => {
+            const name = document.getElementById('name').value;
+            const phone = document.getElementById('phone').value;
+            const email = document.getElementById('email').value;
+            const category = document.getElementById('category').value;
+            const productType = document.getElementById('productType').value;
+            const message = document.getElementById('message').value;
+
+            if (!name || !phone || !email || !category || !productType || !message) {
+                alert('Please fill in all required fields before submitting.');
+                return false;
+            }
+            return true;
+        };
+
+        const formatWhatsAppMessage = () => {
+            const name = document.getElementById('name').value;
+            const phone = document.getElementById('phone').value;
+            const email = document.getElementById('email').value;
+            const category = document.getElementById('category').value;
+            const productType = document.getElementById('productType').value;
+            const message = document.getElementById('message').value;
+
+            return `Hello First Choice Tents & Aluminium!%0A%0A*New Contact Request*%0A%0A*Name:* ${name}%0A*Phone:* ${phone}%0A*Email:* ${email}%0A*Category:* ${category}%0A*Product Interest:* ${productType}%0A%0A*Project Details:*%0A${message}%0A%0APlease contact me to discuss further.`;
+        };
+
+        const formatEmailMessage = () => {
+            const name = document.getElementById('name').value;
+            const phone = document.getElementById('phone').value;
+            const email = document.getElementById('email').value;
+            const category = document.getElementById('category').value;
+            const productType = document.getElementById('productType').value;
+            const message = document.getElementById('message').value;
+
+            return `mailto:firstchoicetents2025@gmail.com?subject=New Contact Request - ${name}&body=Hello First Choice Tents & Aluminium!%0D%0A%0D%0ANew Contact Request%0D%0A%0D%0AName: ${name}%0D%0APhone: ${phone}%0D%0AEmail: ${email}%0D%0ACategory: ${category}%0D%0AProduct Interest: ${productType}%0D%0A%0D%0AProject Details:%0D%0A${message}%0D%0A%0D%0APlease contact me to discuss further.`;
+        };
+
+        whatsappBtn.addEventListener('click', () => {
+            if (validateForm()) {
+                const whatsappUrl = `https://wa.me/256706028299?text=${formatWhatsAppMessage()}`;
+                window.open(whatsappUrl, '_blank');
+            }
+        });
+
+        emailBtn.addEventListener('click', () => {
+            if (validateForm()) {
+                const emailUrl = formatEmailMessage();
+                window.location.href = emailUrl;
+            }
+        });
+
+        // FAQ functionality
+        const faqItems = document.querySelectorAll('.faq-item');
+        
+        faqItems.forEach(item => {
+            const question = item.querySelector('.faq-question');
+            
+            question.addEventListener('click', () => {
+                // Close all other items
+                faqItems.forEach(otherItem => {
+                    if (otherItem !== item) {
+                        otherItem.classList.remove('active');
+                    }
+                });
+                
+                // Toggle current item
+                item.classList.toggle('active');
+            });
+        });
+    </script>
+</body>
+</html>
