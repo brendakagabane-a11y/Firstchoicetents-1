@@ -1,0 +1,1280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Support Center | First Choice Tents & Aluminium</title>
+    <meta name="description" content="Get expert support for tents, aluminium fabrication, installation, and maintenance. 24/7 assistance available.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --primary: #004E89;
+            --primary-dark: #003A6B;
+            --secondary: #FF6B35;
+            --accent: #F7931E;
+            --success: #10B981;
+            --warning: #F59E0B;
+            --error: #EF4444;
+            --dark: #1A1A2E;
+            --light: #F8F9FA;
+            --text: #0F172A;
+            --text-light: #64748B;
+            --border: #E2E8F0;
+            --card-bg: #FFFFFF;
+            --bg: #F6F8FB;
+            --radius: 16px;
+            --shadow: 0 4px 20px rgba(2, 6, 23, 0.08);
+            --shadow-lg: 0 10px 40px rgba(0, 0, 0, 0.12);
+            --transition: all 0.3s ease;
+        }
+
+        [data-theme="dark"] {
+            --primary: #3B82F6;
+            --primary-dark: #1D4ED8;
+            --secondary: #F97316;
+            --accent: #F59E0B;
+            --dark: #0F172A;
+            --light: #1E293B;
+            --text: #F1F5F9;
+            --text-light: #94A3B8;
+            --border: #334155;
+            --card-bg: #1E293B;
+            --bg: #0F172A;
+            --shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+            --shadow-lg: 0 10px 40px rgba(0, 0, 0, 0.5);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+            transition: background-color 0.3s ease;
+        }
+
+        /* Enhanced Header */
+       
+        [data-theme="dark"] #navbar {
+            background: rgba(30, 41, 59, 0.95);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 2rem;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            flex-shrink: 0;
+        }
+
+        .logo-image {
+            height: 50px;
+            width: auto;
+            transition: transform 0.3s ease;
+        }
+
+        .logo:hover .logo-image {
+            transform: scale(1.05);
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 0.5rem;
+            align-items: center;
+            flex-wrap: wrap;
+            flex: 1;
+            justify-content: center;
+        }
+
+        .nav-links li a {
+            text-decoration: none;
+            color: var(--text);
+            padding: 0.6rem 1rem;
+            border-radius: 6px;
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: var(--transition);
+            display: block;
+            white-space: nowrap;
+        }
+
+        .nav-links li a:hover {
+            background: var(--secondary);
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        .nav-links li a.active {
+            background: var(--secondary);
+            color: white;
+        }
+
+        .controls {
+            display: flex;
+            gap: 0.5rem;
+            flex-shrink: 0;
+        }
+
+        .ctrl-btn {
+            background: transparent;
+            border: 2px solid var(--text);
+            color: var(--text);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 1.2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+        }
+
+        .ctrl-btn:hover {
+            background: var(--secondary);
+            border-color: var(--secondary);
+            color: white;
+            transform: rotate(15deg) scale(1.1);
+        }
+
+        .ctrl-btn:active {
+            transform: scale(0.95);
+        }
+
+        .mobile-menu {
+            display: none;
+            background: transparent;
+            border: 2px solid var(--text);
+            color: var(--text);
+            width: 40px;
+            height: 40px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 1.5rem;
+            transition: var(--transition);
+            align-items: center;
+            justify-content: center;
+        }
+
+        .mobile-menu:hover {
+            background: var(--secondary);
+            border-color: var(--secondary);
+            color: white;
+        }
+
+        /* Hero Section */
+        .support-hero {
+            padding: 6rem 2rem;
+            background-image: 
+                linear-gradient(
+                    rgba(0, 0, 0, 0.6),
+                    rgba(0, 0, 0, 0.6)
+                ),
+                url('Home28.jpg');
+            background-size: cover; 
+            background-position: center center; 
+            background-repeat: no-repeat;
+            color: white;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .support-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 100" fill="%23ffffff" opacity="0.05"><polygon points="0,0 1000,50 1000,100 0,100"/></svg>');
+            background-size: cover;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-content h1 {
+            font-size: clamp(2.5rem, 5vw, 3.5rem);
+            margin-bottom: 1.5rem;
+            font-weight: 800;
+        }
+
+        .hero-content p {
+            font-size: 1.2rem;
+            margin-bottom: 2.5rem;
+            opacity: 0.9;
+        }
+
+        .search-container {
+            max-width: 600px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .search-input {
+            width: 100%;
+            padding: 1.2rem 1.5rem;
+            border-radius: 50px;
+            border: none;
+            font-size: 1.1rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            transition: var(--transition);
+        }
+
+        .search-input:focus {
+            outline: none;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+            transform: translateY(-2px);
+        }
+
+        .search-btn {
+            position: absolute;
+            right: 8px;
+            top: 8px;
+            background: var(--secondary);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .search-btn:hover {
+            background: var(--accent);
+            transform: scale(1.05);
+        }
+
+        /* Main Layout */
+        .support-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        .support-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+        }
+
+        @media (max-width: 1024px) {
+            .support-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Support Options */
+        .support-options {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
+
+        .support-card {
+            background: var(--card-bg);
+            border-radius: var(--radius);
+            padding: 2.5rem;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            text-align: center;
+            border: 1px solid var(--border);
+        }
+
+        .support-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .support-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            font-size: 2rem;
+            color: white;
+            box-shadow: 0 10px 30px rgba(0, 78, 137, 0.3);
+        }
+
+        .support-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--text);
+        }
+
+        .support-card p {
+            color: var(--text-light);
+            margin-bottom: 1.5rem;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 0.8rem 1.5rem;
+            background: var(--secondary);
+            color: white;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background: var(--accent);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(255, 107, 53, 0.3);
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 2px solid var(--secondary);
+            color: var(--secondary);
+        }
+
+        .btn-outline:hover {
+            background: var(--secondary);
+            color: white;
+        }
+
+        /* AI Assistant */
+        .ai-assistant {
+            background: var(--card-bg);
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            overflow: hidden;
+            height: 600px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .chat-header {
+            padding: 1.5rem;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            color: white;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .avatar {
+            width: 50px;
+            height: 50px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+        }
+
+        .chat-info h3 {
+            font-size: 1.2rem;
+            margin-bottom: 0.2rem;
+        }
+
+        .chat-info p {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        .chat-body {
+            flex: 1;
+            padding: 1.5rem;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            background: var(--bg);
+        }
+
+        .message {
+            max-width: 80%;
+            padding: 1rem 1.2rem;
+            border-radius: 18px;
+            line-height: 1.5;
+            animation: fadeIn 0.3s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .message.bot {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            align-self: flex-start;
+            border-bottom-left-radius: 4px;
+        }
+
+        .message.user {
+            background: linear-gradient(135deg, var(--secondary), var(--accent));
+            color: white;
+            align-self: flex-end;
+            border-bottom-right-radius: 4px;
+        }
+
+        .quick-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+            margin-top: 1rem;
+        }
+
+        .quick-chip {
+            padding: 0.5rem 1rem;
+            background: rgba(0, 78, 137, 0.1);
+            border-radius: 20px;
+            font-size: 0.85rem;
+            cursor: pointer;
+            transition: var(--transition);
+            border: 1px solid transparent;
+        }
+
+        .quick-chip:hover {
+            background: var(--primary);
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        .chat-input {
+            padding: 1.5rem;
+            border-top: 1px solid var(--border);
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+        }
+
+        .input-wrapper {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            background: var(--bg);
+            border-radius: 50px;
+            padding: 0.5rem 1rem;
+            border: 2px solid transparent;
+            transition: var(--transition);
+        }
+
+        .input-wrapper:focus-within {
+            border-color: var(--primary);
+        }
+
+        .chat-input-field {
+            flex: 1;
+            border: none;
+            background: transparent;
+            padding: 0.8rem;
+            font-size: 1rem;
+            color: var(--text);
+            outline: none;
+        }
+
+        .send-btn {
+            background: var(--secondary);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .send-btn:hover {
+            background: var(--accent);
+            transform: scale(1.05);
+        }
+
+        /* Knowledge Base */
+        .knowledge-base {
+            margin-top: 4rem;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            text-align: center;
+            color: var(--text);
+        }
+
+        .categories {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .category-card {
+            background: var(--card-bg);
+            border-radius: var(--radius);
+            padding: 2rem;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            border: 1px solid var(--border);
+        }
+
+        .category-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .category-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--primary);
+        }
+
+        .category-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+        }
+
+        .articles-list {
+            list-style: none;
+        }
+
+        .articles-list li {
+            margin-bottom: 0.8rem;
+            padding-bottom: 0.8rem;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .articles-list li:last-child {
+            margin-bottom: 0;
+            padding-bottom: 0;
+            border-bottom: none;
+        }
+
+        .articles-list a {
+            color: var(--text);
+            text-decoration: none;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .articles-list a:hover {
+            color: var(--primary);
+        }
+
+        /* Contact Section */
+        .contact-section {
+            margin-top: 4rem;
+            background: var(--card-bg);
+            border-radius: var(--radius);
+            padding: 3rem;
+            box-shadow: var(--shadow);
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .contact-method {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            padding: 2rem;
+            border-radius: var(--radius);
+            background: var(--bg);
+            transition: var(--transition);
+        }
+
+        .contact-method:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow);
+        }
+
+        .contact-icon {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+            font-size: 1.8rem;
+            color: white;
+        }
+
+        .contact-method h3 {
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+        }
+
+        .contact-method p {
+            color: var(--text-light);
+            margin-bottom: 1.5rem;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--dark);
+            color: white;
+            padding: 4rem 2rem 2rem;
+        }
+
+        .footer-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-col h3 {
+            color: white;
+            margin-bottom: 1.5rem;
+            font-size: 1.3rem;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.8rem;
+        }
+
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .footer-links a:hover {
+            color: var(--secondary);
+        }
+
+        .footer-contact li {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1.2rem;
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .footer-contact i {
+            color: var(--secondary);
+            width: 20px;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-container {
+                padding: 1rem;
+            }
+
+            .mobile-menu {
+                display: flex;
+            }
+
+            .nav-links {
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: rgba(255, 255, 255, 0.98);
+                backdrop-filter: blur(20px);
+                flex-direction: column;
+                padding: 1rem;
+                gap: 0;
+                max-height: 0;
+                overflow: hidden;
+                opacity: 0;
+                transition: max-height 0.3s ease, opacity 0.3s ease;
+                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            }
+
+            [data-theme="dark"] .nav-links {
+                background: rgba(30, 41, 59, 0.98);
+            }
+
+            .nav-links.active {
+                max-height: 500px;
+                opacity: 1;
+            }
+
+            .nav-links li {
+                width: 100%;
+            }
+
+            .nav-links li a {
+                width: 100%;
+                text-align: left;
+                padding: 0.8rem 1rem;
+                border-radius: 4px;
+            }
+
+            .controls {
+                order: -1;
+            }
+
+            .support-hero {
+                padding: 4rem 1rem;
+            }
+
+            .support-container {
+                padding: 2rem 1rem;
+            }
+
+            .support-options {
+                grid-template-columns: 1fr;
+            }
+
+            .message {
+                max-width: 90%;
+            }
+        }
+
+        /* WhatsApp Float */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 70px;
+            height: 70px;
+            background: #25D366;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.2rem;
+            color: white;
+            box-shadow: 0 10px 40px rgba(37, 211, 102, 0.5);
+            z-index: 999;
+            text-decoration: none;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+    </style>
+</head>
+<body data-theme="light">
+    <header>
+        <nav id="navbar">
+            <div class="nav-container">
+                <a href="index.html" class="logo">
+                    <img src="logo1.png" alt="First Choice & Aluminium Fabrication Logo" class="logo-image">
+                </a>
+                
+                <ul class="nav-links" id="navLinks">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="market.html">Marketplace</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="support.html" class="active">Support</a></li>
+                    <li><a href="resources.html">Resources</a></li>
+                    <li><a href="portfolio.html">Portfolio</a></li>
+                </ul>
+
+                <div class="controls">
+                    <button id="themeToggle" class="ctrl-btn" title="Toggle theme" aria-label="Toggle dark/light theme">🌙</button>
+                </div>
+                
+                <button class="mobile-menu" id="mobileMenu" aria-label="Toggle navigation menu">☰</button>
+            </div>
+        </nav>
+    </header>
+
+    <section class="support-hero">
+        <div class="hero-content">
+            <h1>How can we help you today?</h1>
+            <p>Find answers, get expert advice, or connect with our support team for tents, aluminium fabrication, and installation services.</p>
+            <div class="search-container">
+                <input type="text" class="search-input" placeholder="Search for answers...">
+                <button class="search-btn">
+                    <i class="fas fa-search"></i>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <div class="support-container">
+        <div class="support-options">
+            <div class="support-card">
+                <div class="support-icon">
+                    <i class="fas fa-robot"></i>
+                </div>
+                <h3>AI Assistant</h3>
+                <p>Get instant answers to common questions about our products, services, and pricing.</p>
+                <a href="#ai-assistant" class="btn">Ask AI Assistant</a>
+            </div>
+
+            <div class="support-card">
+                <div class="support-icon">
+                    <i class="fas fa-book"></i>
+                </div>
+                <h3>Knowledge Base</h3>
+                <p>Browse our comprehensive guides, tutorials, and FAQs for self-service support.</p>
+                <a href="#knowledge-base" class="btn">Browse Articles</a>
+            </div>
+
+            <div class="support-card">
+                <div class="support-icon">
+                    <i class="fas fa-headset"></i>
+                </div>
+                <h3>Live Support</h3>
+                <p>Connect with our expert team via phone, WhatsApp, or email for personalized assistance.</p>
+                <a href="#contact" class="btn">Contact Support</a>
+            </div>
+
+            <div class="support-card">
+                <div class="support-icon">
+                    <i class="fas fa-tools"></i>
+                </div>
+                <h3>Technical Help</h3>
+                <p>Get help with installation, maintenance, repairs, and technical specifications.</p>
+                <a href="tel:+256706028299" class="btn">Call Technician</a>
+            </div>
+        </div>
+
+        <div class="support-grid">
+            <div class="ai-assistant" id="ai-assistant">
+                <div class="chat-header">
+                    <div class="avatar">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <div class="chat-info">
+                        <h3>First Choice AI Assistant</h3>
+                        <p>Online • Responds instantly</p>
+                    </div>
+                </div>
+                <div class="chat-body" id="chatBody">
+                    <div class="message bot">
+                        <p>Hello! I'm your First Choice AI assistant. How can I help you today?</p>
+                        <div class="quick-actions">
+                            <div class="quick-chip" data-msg="Tell me about your tent products">Tent Products</div>
+                            <div class="quick-chip" data-msg="Tell me about aluminium fabrication">Aluminium Works</div>
+                            <div class="quick-chip" data-msg="How much does a wedding tent cost?">Pricing</div>
+                            <div class="quick-chip" data-msg="Do you install nationwide?">Installation</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="chat-input">
+                    <div class="input-wrapper">
+                        <input type="text" class="chat-input-field" id="chatInput" placeholder="Type your question...">
+                    </div>
+                    <button class="send-btn" id="sendBtn">
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
+                </div>
+            </div>
+
+            <div class="knowledge-base" id="knowledge-base">
+                <h2 class="section-title">Knowledge Base</h2>
+                <div class="categories">
+                    <div class="category-card">
+                        <div class="category-icon">
+                            <i class="fas fa-campground"></i>
+                        </div>
+                        <h3>Tents & Shelters</h3>
+                        <ul class="articles-list">
+                            <li><a href="#"><i class="fas fa-file-alt"></i> How to choose the right tent for your event</a></li>
+                            <li><a href="#"><i class="fas fa-file-alt"></i> Tent maintenance and care guide</a></li>
+                            <li><a href="#"><i class="fas fa-file-alt"></i> Weatherproofing your tent</a></li>
+                            <li><a href="#"><i class="fas fa-file-alt"></i> Setting up different tent types</a></li>
+                            <li><a href="#"><i class="fas fa-file-alt"></i> Troubleshooting common tent issues</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="category-card">
+                        <div class="category-icon">
+                            <i class="fas fa-window-restore"></i>
+                        </div>
+                        <h3>Aluminium Works</h3>
+                        <ul class="articles-list">
+                            <li><a href="#"><i class="fas fa-file-alt"></i> Choosing the right aluminium profile</a></li>
+                            <li><a href="#"><i class="fas fa-file-alt"></i> Maintenance of aluminium doors and windows</a></li>
+                            <li><a href="#"><i class="fas fa-file-alt"></i> Custom fabrication process explained</a></li>
+                            <li><a href="#"><i class="fas fa-file-alt"></i> Energy efficiency with aluminium frames</a></li>
+                            <li><a href="#"><i class="fas fa-file-alt"></i> Repairing common aluminium issues</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="category-card">
+                        <div class="category-icon">
+                            <i class="fas fa-tools"></i>
+                        </div>
+                        <h3>Installation & Maintenance</h3>
+                        <ul class="articles-list">
+                            <li><a href="#"><i class="fas fa-file-alt"></i> Preparing your site for installation</a></li>
+                            <li><a href="#"><i class="fas fa-file-alt"></i> DIY maintenance checklist</a></li>
+                            <li><a href="#"><i class="fas fa-file-alt"></i> When to call a professional</a></li>
+                            <li><a href="#"><i class="fas fa-file-alt"></i> Seasonal maintenance guide</a></li>
+                            <li><a href="#"><i class="fas fa-file-alt"></i> Emergency repair procedures</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="category-card">
+                        <div class="category-icon">
+                            <i class="fas fa-file-invoice-dollar"></i>
+                        </div>
+                        <h3>Pricing & Orders</h3>
+                        <ul class="articles-list">
+                            <li><a href="#"><i class="fas fa-file-alt"></i> Understanding our pricing structure</a></li>
+                            <li><a href="#"><i class="fas fa-file-alt"></i> How to get an accurate quote</a></li>
+                            <li><a href="#"><i class="fas fa-file-alt"></i> Payment options explained</a></li>
+                            <li><a href="#"><i class="fas fa-file-alt"></i> Tracking your order</a></li>
+                            <li><a href="#"><i class="fas fa-file-alt"></i> Cancellation and refund policy</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="contact-section" id="contact">
+            <h2 class="section-title">Contact Our Support Team</h2>
+            <div class="contact-grid">
+                <div class="contact-method">
+                    <div class="contact-icon">
+                        <i class="fab fa-whatsapp"></i>
+                    </div>
+                    <h3>WhatsApp</h3>
+                    <p>Get quick answers and share images of your project</p>
+                    <a href="https://wa.me/256706028299" class="btn">Chat Now</a>
+                </div>
+
+                <div class="contact-method">
+                    <div class="contact-icon">
+                        <i class="fas fa-phone"></i>
+                    </div>
+                    <h3>Phone Support</h3>
+                    <p>Speak directly with our support specialists</p>
+                    <a href="tel:+256706028299" class="btn">Call Now</a>
+                </div>
+
+                <div class="contact-method">
+                    <div class="contact-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <h3>Email Support</h3>
+                    <p>Send detailed inquiries and get comprehensive responses</p>
+                    <a href="mailto:firstchoicetents2025@gmail.com" class="btn">Send Email</a>
+                </div>
+
+                <div class="contact-method">
+                    <div class="contact-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <h3>Visit Us</h3>
+                    <p>Get in-person support at our Mukono or Arua branches</p>
+                    <a href="contact.html" class="btn btn-outline">View Locations</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-col">
+                <h3>First Choice</h3>
+                <p>Uganda's trusted manufacturer of high-quality tents and aluminium products for events, construction, and custom solutions.</p>
+                <div class="social-links" style="display: flex; gap: 1rem; margin-top: 1.5rem;">
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                </div>
+            </div>
+            
+            <div class="footer-col">
+                <h3>Quick Links</h3>
+                <ul class="footer-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-col">
+                <h3>Our Services</h3>
+                <ul class="footer-links">
+                    <li><a href="portfolio.html">Tents & Shelters</a></li>
+                    <li><a href="fabricationsblog.html">Aluminium Fabrication</a></li>
+                    <li><a href="contact">Custom Solutions</a></li>
+                    <li><a href="support.html">Installation Services</a></li>
+                    <li><a href="support.html">Maintenance & Repair</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-col">
+                <h3>Contact Us</h3>
+                <ul class="footer-contact">
+                    <li>
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <p>+256 706 028 299</p>
+                            <p>+256 787 028 099</p>
+                            <p>+256 755 550 827</p>
+                        </div>
+                    </li>
+                    <li>
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <p>firstchoicetents2025@gmail.com</p>
+                        </div>
+                    </li>
+                    <li>
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <p><strong>Mukono Branch:</strong> Opposite BE Energy Petrol Station, next to Jobia Hotel</p>
+                            <p><strong>Arua Branch:</strong> Baluku Cell, next to Arua Primary School, Sudan Road</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2025 First Choice Tents & Aluminium Fabrication. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <a href="https://wa.me/256706028299" class="whatsapp-float" target="_blank" aria-label="Contact via WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <script>
+        // Mobile menu functionality
+        const mobileMenu = document.getElementById('mobileMenu');
+        const navLinks = document.getElementById('navLinks');
+
+        mobileMenu.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            mobileMenu.innerHTML = navLinks.classList.contains('active') ? '✕' : '☰';
+        });
+
+        // Theme toggle
+        const themeToggle = document.getElementById('themeToggle');
+        themeToggle.addEventListener('click', () => {
+            const currentTheme = document.body.getAttribute('data-theme') || 'light';
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            document.body.setAttribute('data-theme', newTheme);
+            themeToggle.innerHTML = newTheme === 'dark' ? '☀️' : '🌙';
+            localStorage.setItem('fc_theme', newTheme);
+        });
+
+        // Set initial theme
+        const savedTheme = localStorage.getItem('fc_theme') || 'light';
+        document.body.setAttribute('data-theme', savedTheme);
+        themeToggle.innerHTML = savedTheme === 'dark' ? '☀️' : '🌙';
+
+        // AI Assistant functionality
+        const chatBody = document.getElementById('chatBody');
+        const chatInput = document.getElementById('chatInput');
+        const sendBtn = document.getElementById('sendBtn');
+
+        // Knowledge base for AI responses
+        const knowledgeBase = {
+            'tent': {
+                response: `<p><strong>🎪 Our Tent Solutions</strong></p>
+                <p>We offer a wide range of high-quality tents for various purposes:</p>
+                <ul>
+                    <li><strong>Event & Wedding Marquees</strong> – Elegant, weather-resistant tents for any celebration</li>
+                    <li><strong>Car Parking Shades</strong> – Durable UV-protected parking solutions</li>
+                    <li><strong>Storage & Warehouse Tents</strong> – Heavy-duty temporary or permanent storage</li>
+                    <li><strong>Custom Sizes Available</strong> – Tailored to your exact specifications</li>
+                </ul>
+                <p>Starting from UGX 18,000/sq.m with free site inspection and installation included.</p>`
+            },
+            'aluminium': {
+                response: `<p><strong>🔧 Aluminium Fabrication Services</strong></p>
+                <p>Our aluminium works include:</p>
+                <ul>
+                    <li><strong>Doors & Windows</strong> – Modern frames with superior finish</li>
+                    <li><strong>Shop Fronts & Partitions</strong> – Professional commercial installations</li>
+                    <li><strong>Custom Frames & Fittings</strong> – Bespoke designs for any project</li>
+                    <li><strong>Glass Work</strong> – Expert glass cutting and installation</li>
+                </ul>
+                <p>From UGX 95,000/sq.m with installation and 5-10 year warranty.</p>`
+            },
+            'pricing': {
+                response: `<p><strong>💰 Transparent Pricing</strong></p>
+                <p>We believe in honest, upfront pricing:</p>
+                <ul>
+                    <li><strong>Tents:</strong> Starting UGX 18,000/m² (varies by size & features)</li>
+                    <li><strong>Aluminium Works:</strong> Starting UGX 95,000/m² (includes installation)</li>
+                    <li><strong>Custom Projects:</strong> Contact us for detailed quotation</li>
+                </ul>
+                <p><strong>💡 Pro Tip:</strong> Bulk orders and combo packages get special discounts! Share your project details on WhatsApp for an instant estimate.</p>`
+            },
+            'installation': {
+                response: `<p><strong>📍 Nationwide Installation Services</strong></p>
+                <p><strong>We deliver and install across Uganda!</strong></p>
+                <ul>
+                    <li><strong>Tents:</strong> 1-3 days (includes site prep & testing)</li>
+                    <li><strong>Aluminium Works:</strong> 1-3 weeks (depending on complexity)</li>
+                    <li><strong>Free Site Inspection</strong> – We assess before quoting</li>
+                    <li><strong>Professional Team</strong> – Experienced installers</li>
+                </ul>
+                <p>Installation is included in all quotes. Call us for urgent projects.</p>`
+            },
+            'warranty': {
+                response: `<p><strong>🛡️ Warranty & Quality Assurance</strong></p>
+                <ul>
+                    <li><strong>Tents:</strong> 1-5 years warranty (material dependent)</li>
+                    <li><strong>Aluminium Works:</strong> 5-10 years warranty</li>
+                    <li><strong>Free Maintenance Tips</strong> – We guide you on care</li>
+                    <li><strong>Spare Parts Available</strong> – Quick replacement service</li>
+                </ul>
+                <p>All installations come with a 90-day workmanship guarantee!</p>`
+            },
+            'default': {
+                response: `<p>👋 I'm here to help! I can assist you with:</p>
+                <ul>
+                    <li>Tent products & pricing</li>
+                    <li>Aluminium fabrication services</li>
+                    <li>Installation & delivery</li>
+                    <li>Warranties & maintenance</li>
+                    <li>Custom project quotes</li>
+                </ul>
+                <p><strong>Try asking:</strong> <em>"How much does a wedding tent cost?"</em> or click a quick action button!</p>`
+            }
+        };
+
+        // Function to add message to chat
+        function addMessage(content, isUser = false) {
+            const messageDiv = document.createElement('div');
+            messageDiv.className = `message ${isUser ? 'user' : 'bot'}`;
+            messageDiv.innerHTML = content;
+            chatBody.appendChild(messageDiv);
+            chatBody.scrollTop = chatBody.scrollHeight;
+        }
+
+        // Function to handle user message
+        function handleUserMessage(message) {
+            addMessage(message, true);
+            
+            // Simulate typing delay
+            setTimeout(() => {
+                let response = knowledgeBase.default.response;
+                
+                // Check for keywords in the message
+                const lowerMessage = message.toLowerCase();
+                if (lowerMessage.includes('tent')) {
+                    response = knowledgeBase.tent.response;
+                } else if (lowerMessage.includes('aluminium') || lowerMessage.includes('aluminum')) {
+                    response = knowledgeBase.aluminium.response;
+                } else if (lowerMessage.includes('price') || lowerMessage.includes('cost') || lowerMessage.includes('how much')) {
+                    response = knowledgeBase.pricing.response;
+                } else if (lowerMessage.includes('install') || lowerMessage.includes('delivery')) {
+                    response = knowledgeBase.installation.response;
+                } else if (lowerMessage.includes('warranty') || lowerMessage.includes('guarantee')) {
+                    response = knowledgeBase.warranty.response;
+                }
+                
+                addMessage(response);
+            }, 1000);
+        }
+
+        // Send button click event
+        sendBtn.addEventListener('click', () => {
+            const message = chatInput.value.trim();
+            if (message) {
+                handleUserMessage(message);
+                chatInput.value = '';
+            }
+        });
+
+        // Enter key event for chat input
+        chatInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') {
+                const message = chatInput.value.trim();
+                if (message) {
+                    handleUserMessage(message);
+                    chatInput.value = '';
+                }
+            }
+        });
+
+        // Quick chip click events
+        document.querySelectorAll('.quick-chip').forEach(chip => {
+            chip.addEventListener('click', () => {
+                const message = chip.getAttribute('data-msg');
+                handleUserMessage(message);
+            });
+        });
+
+        // Search functionality
+        const searchInput = document.querySelector('.search-input');
+        const searchBtn = document.querySelector('.search-btn');
+
+        searchBtn.addEventListener('click', () => {
+            const query = searchInput.value.trim();
+            if (query) {
+                // In a real implementation, this would search the knowledge base
+                // For now, we'll just show a message
+                addMessage(`I'm searching for information about "${query}"...`);
+                setTimeout(() => {
+                    addMessage(`I found several articles about "${query}" in our knowledge base. You can browse the relevant categories above, or <a href="https://wa.me/256706028299" target="_blank">contact our support team</a> for more specific information.`);
+                }, 1500);
+                searchInput.value = '';
+            }
+        });
+
+        searchInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') {
+                searchBtn.click();
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,786 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Services | Premium Tents & Aluminium - First Choice</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #FF6B35;
+            --secondary: #004E89;
+            --accent: #F7931E;
+            --dark: #1A1A2E;
+            --light: #F8F9FA;
+            --text: #2C3E50;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text);
+            overflow-x: hidden;
+        }
+
+        /* Navigation */
+        
+
+        /* Hero Header */
+       .page-hero {
+    /* 1. Use a linear gradient for the semi-transparent black overlay (rgba(0,0,0, 0.6)) */
+    /* AND the background image. The gradient comes first to layer on top. */
+    background-image: 
+        linear-gradient(
+            rgba(0, 0, 0, 0.6), /* Start of overlay (adjust 0.6 for darkness: 0.1 is light, 0.9 is very dark) */
+            rgba(0, 0, 0, 0.6)  /* End of overlay */
+        ),
+        url('Pick13.jpg'); /* 2. Image URL goes after the gradient */
+    
+    /* 3. Standard background properties */
+    background-size: cover; 
+    background-position: center center; 
+    background-repeat: no-repeat;
+    
+    /* 4. Ensure it has a good size */
+    min-height: 600px; /* Adjust this value as needed */
+}
+
+        /* Service Focus Sections */
+        .service-focus {
+            padding: 8rem 2rem;
+            position: relative;
+        }
+
+        .service-focus:nth-child(even) {
+            background: var(--light);
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .service-header {
+            text-align: center;
+            margin-bottom: 5rem;
+        }
+
+        .service-label {
+            display: inline-block;
+            padding: 0.5rem 1.5rem;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            color: white;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            letter-spacing: 1px;
+        }
+
+        .service-title {
+            font-size: clamp(2.5rem, 4vw, 3.5rem);
+            font-weight: 800;
+            color: var(--dark);
+            margin-bottom: 1.5rem;
+        }
+
+        .service-subtitle {
+            font-size: 1.2rem;
+            color: #666;
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.8;
+        }
+
+        /* Service Grid Layout */
+        .service-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 5rem;
+            align-items: center;
+            margin-top: 4rem;
+            background-size: cover; /* fills container */
+  background-position: center center;
+  background-repeat: no-repeat;
+  transform: scale(1); /* no zoom */
+  transition: all 0.5s ease;
+        }
+
+        .service-focus:nth-child(even) .service-grid {
+            direction: rtl;
+        }
+
+        .service-focus:nth-child(even) .service-content {
+            direction: ltr;
+        }
+
+        .service-visual {
+            position: relative;
+            height: 500px;
+            border-radius: 30px;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.2rem;
+            font-weight: 600;
+            transition: transform 0.5s ease;
+        }
+
+        .service-visual:hover {
+            transform: scale(1.03);
+        }
+
+        .service-visual::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+              }
+
+        .service-content h3 {
+            font-size: 1.5rem;
+            color: var(--secondary);
+            margin-bottom: 1.5rem;
+            font-weight: 700;
+        }
+
+        .service-content p {
+            font-size: clamp(1rem, 1.5vw, 1.3rem);
+            color: #555;
+            line-height: 1.9;
+            margin-bottom: 2rem;
+        }
+
+        /* Feature List */
+        .feature-list {
+            list-style: none;
+            display: grid;
+            gap: 1.5rem;
+            margin: 2.5rem 0;
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            padding: 1.5rem;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+        }
+
+        .service-focus:nth-child(even) .feature-item {
+            background: rgba(255, 255, 255, 0.7);
+        }
+
+        .feature-item:hover {
+            transform: translateX(10px);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .feature-icon {
+            font-size: 2rem;
+            flex-shrink: 0;
+        }
+
+        .feature-text h4 {
+            font-size: 1.01rem;
+            color: var(--dark);
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        .feature-text p {
+            font-size: 1rem;
+            color: #666;
+            margin: 0;
+            line-height: 1.6;
+        }
+
+        /* CTA Button */
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--secondary);
+            border: 2px solid var(--secondary);
+        }
+
+        .btn-secondary:hover {
+            background: var(--secondary);
+            color: white;
+            transform: translateY(-3px);
+        }
+
+        /* Additional Services Grid */
+        .additional-services {
+            padding: 8rem 2rem;
+            background: linear-gradient(135deg, var(--dark) 0%, #2c3e50 100%);
+            color: white;
+        }
+
+        .services-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2.5rem;
+            margin-top: 4rem;
+        }
+
+        .service-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 25px;
+            padding: 3rem;
+            transition: all 0.5s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(90deg, var(--primary), var(--accent));
+            transform: scaleX(0);
+            transition: transform 0.5s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            background: rgba(255, 255, 255, 0.15);
+        }
+
+        .service-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .service-card-icon {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            display: inline-block;
+        }
+
+        .service-card h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .service-card p {
+            font-size: 1.05rem;
+            opacity: 0.9;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+
+        .service-card .highlight {
+            color: var(--accent);
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+
+        /* Process Section */
+        .process-section {
+            padding: 8rem 2rem;
+            background: white;
+        }
+
+        .process-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+            margin-top: 4rem;
+        }
+
+        .process-step {
+            text-align: center;
+            position: relative;
+        }
+
+        .step-number {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            font-weight: 800;
+            color: white;
+            margin: 0 auto 1.5rem;
+            box-shadow: 0 10px 30px rgba(255, 107, 53, 0.3);
+        }
+
+        .process-step h3 {
+            font-size: 1.5rem;
+            color: var(--secondary);
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .process-step p {
+            color: #666;
+            line-height: 1.8;
+        }
+
+        /* Final CTA */
+        .final-cta {
+            padding: 8rem 2rem;
+            background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+            text-align: center;
+            color: white;
+        }
+
+        .final-cta h2 {
+            font-size: clamp(2rem, 4vw, 3.5rem);
+            margin-bottom: 1.5rem;
+            font-weight: 800;
+        }
+
+        .final-cta p {
+            font-size: 1.4rem;
+            margin-bottom: 3rem;
+            opacity: 0.95;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        /* WhatsApp Float */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 70px;
+            height: 70px;
+            background: #25D366;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.2rem;
+            color: white;
+            box-shadow: 0 10px 40px rgba(37, 211, 102, 0.5);
+            z-index: 999;
+            text-decoration: none;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+
+        /* Footer */
+      
+
+        /* Responsive */
+        @media (max-width: 968px) {
+            .service-grid {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+
+            .service-focus:nth-child(even) .service-grid {
+                direction: ltr;
+            }
+
+            .service-visual {
+                height: 350px;
+            }
+
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background: rgba(26, 26, 46, 0.98);
+                backdrop-filter: blur(20px);
+                flex-direction: column;
+                padding: 2rem;
+                gap: 1.5rem;
+            }
+
+            .nav-links.show {
+                display: flex;
+            }
+
+            .mobile-menu {
+                display: block;
+            }
+
+            .page-hero {
+                padding: 10rem 1.5rem 6rem;
+            }
+
+            .service-focus {
+                padding: 5rem 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+      <nav id="navbar">
+    <div class="nav-container">
+        <a href="index.html" class="logo">
+            <img src="logo1.png" alt="First Choice & aluminium Fabrication Logo" class="logo-image">
+        </a>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="market.html">Marketplace</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="support.html">AI Support</a></li>
+            <li><a href="resources.html">Resources & Blog</a></li>
+            <li><a href="Portfolio.html">Portfolio</a></li>
+        </ul>
+        <div class="mobile-menu" id="mobileMenu">☰</div>
+    </div>
+</nav>
+
+    <header class="page-hero">
+        <div class="hero-content">
+            <h1>World-Class Solutions for Every Project</h1>
+            <p>From elegant event tents to modern aluminium installations, we deliver excellence backed by 15+ years of expertise in Uganda.</p>
+        </div>
+    </header>
+
+    <!-- Tents Section -->
+    <section class="service-focus" id="tents">
+        <div class="container">
+            <div class="service-header">
+                <span class="service-label">⛺ PREMIUM TENTS</span>
+                <h2 class="service-title">Event Tents & Shelters</h2>
+                <p class="service-subtitle">Weather-resistant, custom-designed tents that combine elegance with durability. Perfect for any occasion under the African sun.</p>
+            </div>
+
+            <div class="service-grid">
+                <div class="service-visual" style="    background-image: 
+        url('Home68.jpg'); ">
+    
+          
+                </div>
+                
+                <div class="service-content">
+                    <h3>Built for Uganda's Climate</h3>
+                    <p>Our tents are specifically engineered to withstand intense sun, heavy rains, and strong winds. Using premium-grade materials and reinforced structures, we guarantee lasting performance.</p>
+
+                    <ul class="feature-list">
+                        <li class="feature-item">
+                            <div class="feature-icon">💒</div>
+                            <div class="feature-text">
+                                <h4>Wedding & Event Marquees</h4>
+                                <p>Elegant, spacious designs with customizable interiors for unforgettable celebrations</p>
+                            </div>
+                        </li>
+                        <li class="feature-item">
+                            <div class="feature-icon">🚗</div>
+                            <div class="feature-text">
+                                <h4>Car Parking Structures</h4>
+                                <p>Durable shade solutions protecting vehicles from harsh weather elements</p>
+                            </div>
+                        </li>
+                        <li class="feature-item">
+                            <div class="feature-icon">🚛</div>
+                            <div class="feature-text">
+                                <h4>Truck Covers & Tarpaulins</h4>
+                                <p>Heavy-duty, waterproof covers for logistics and transportation fleets</p>
+                            </div>
+                        </li>
+                        <li class="feature-item">
+                            <div class="feature-icon">🍺</div>
+                            <div class="feature-text">
+                                <h4>Bar Shades & Canopies</h4>
+                                <p>Custom-branded outdoor structures for restaurants and entertainment venues</p>
+                            </div>
+                        </li>
+                    </ul>
+
+                    <a href="contact.html?type=tent" class="btn btn-primary">Request Tent Quote →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Aluminium Section -->
+    <section class="service-focus" id="aluminium">
+        <div class="container">
+            <div class="service-header">
+                <span class="service-label" style="background: var(--secondary);">🏗️ ALUMINIUM WORKS</span>
+                <h2 class="service-title">Modern Aluminium Fabrication</h2>
+                <p class="service-subtitle">Sleek, secure, and sustainable architectural solutions. From residential windows to commercial frontages, we craft excellence in aluminium.</p>
+            </div>
+
+            <div class="service-grid">
+                 <div class="service-visual" style="    background-image: 
+        
+        url('Al4.jpg');  ">      
+        
+                </div>
+                
+                <div class="service-content">
+                    <h3>Precision-Engineered Installations</h3>
+                    <p>Our aluminium works combine aesthetic appeal with superior functionality. Every installation is measured, fabricated, and fitted with meticulous attention to detail.</p>
+
+                    <ul class="feature-list">
+                        <li class="feature-item">
+                            <div class="feature-icon">🚪</div>
+                            <div class="feature-text">
+                                <h4>Aluminium Doors & Windows</h4>
+                                <p>Energy-efficient, secure, and stylish openings for modern buildings</p>
+                            </div>
+                        </li>
+                        <li class="feature-item">
+                            <div class="feature-icon">🏢</div>
+                            <div class="feature-text">
+                                <h4>Glass Partitions & Fittings</h4>
+                                <p>Create bright, open spaces with our frameless glass systems</p>
+                            </div>
+                        </li>
+                        <li class="feature-item">
+                            <div class="feature-icon">🏪</div>
+                            <div class="feature-text">
+                                <h4>Shop & Office Fronts</h4>
+                                <p>Professional facades that enhance your brand visibility and security</p>
+                            </div>
+                        </li>
+                        <li class="feature-item">
+                            <div class="feature-icon">🛡️</div>
+                            <div class="feature-text">
+                                <h4>Custom Security Structures</h4>
+                                <p>Reinforced grilles, barriers, and protective installations</p>
+                            </div>
+                        </li>
+                    </ul>
+
+                    <a href="contact.html?type=aluminium" class="btn btn-primary">Start Aluminium Project →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Additional Services -->
+    <section class="additional-services">
+        <div class="container">
+            <div class="service-header">
+                <span class="service-label">✨ COMPLETE SOLUTIONS</span>
+                <h2 class="service-title" style="color: white;">From Design to Installation</h2>
+                <p class="service-subtitle" style="color: rgba(255,255,255,0.9);">We handle every aspect of your project with professional expertise and care.</p>
+            </div>
+
+            <div class="services-cards">
+                <div class="service-card">
+                    <div class="service-card-icon">🎨</div>
+                    <h3>Custom Design</h3>
+                    <p>Collaborative design process tailored to your exact specifications, budget, and aesthetic vision.</p>
+                    <span class="highlight">Free Consultation Available</span>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-card-icon">🔧</div>
+                    <h3>Professional Installation</h3>
+                    <p>Expert technical teams ensure safe, precise, and timely installation across Uganda.</p>
+                    <span class="highlight">Nationwide Coverage</span>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-card-icon">🛡️</div>
+                    <h3>Quality Guarantee</h3>
+                    <p>All products backed by comprehensive warranties and ongoing maintenance support.</p>
+                    <span class="highlight">1-10 Year Warranties</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Section -->
+    <section class="process-section">
+        <div class="container">
+            <div class="service-header">
+                <span class="service-label">📋 OUR PROCESS</span>
+                <h2 class="service-title">Simple, Transparent Workflow</h2>
+                <p class="service-subtitle">From initial contact to final installation, we make the process seamless and stress-free.</p>
+            </div>
+
+            <div class="process-grid">
+                <div class="process-step">
+                    <div class="step-number">1</div>
+                    <h3>Consultation</h3>
+                    <p>Share your vision. We listen, advise, and provide expert recommendations.</p>
+                </div>
+
+                <div class="process-step">
+                    <div class="step-number">2</div>
+                    <h3>Quote & Design</h3>
+                    <p>Receive detailed pricing and custom design proposals within 24-48 hours.</p>
+                </div>
+
+                <div class="process-step">
+                    <div class="step-number">3</div>
+                    <h3>Fabrication</h3>
+                    <p>Our skilled team manufactures your product using premium materials.</p>
+                </div>
+
+                <div class="process-step">
+                    <div class="step-number">4</div>
+                    <h3>Installation</h3>
+                    <p>Professional setup with quality checks and customer satisfaction guarantee.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="final-cta">
+        <div class="container">
+            <h2>Ready to Start Your Project?</h2>
+            <p>Contact our Mukono or Arua team today for a free consultation and quote</p>
+            <div class="cta-buttons">
+                <a href="contact.html" class="btn btn-primary">Get Free Quote →</a>
+                <a href="portfolio.html" class="btn btn-secondary" style="border-color: white; color: white;">View Portfolio</a>
+            </div>
+        </div>
+    </section>
+    <!-- Footer -->
+      <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col footer-about">
+                    <h3>First Choice</h3>
+                    <p>Uganda's trusted manufacturer of high-quality tents and aluminium products for events, construction, and custom solutions.</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="gallery.html">Gallery</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Our Services</h3>
+                    <ul class="footer-links">
+                        <li><a href="portfolio.html">Tents & Shelters</a></li>
+                        <li><a href="fabricationsblog.html">Aluminium Fabrication</a></li>
+                        <li><a href="contact">Custom Solutions</a></li>
+                        <li><a href="support.html">Installation Services</a></li>
+                        <li><a href="support.html">Maintenance & Repair</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Contact Us</h3>
+                    <ul class="footer-contact">
+                        <li>
+                            <i class="fas fa-phone"></i>
+                            <div>
+                                <p>+256 706 028 299</p>
+                                <p>+256 787 028 099</p>
+                                <p>+256 755 550 827</p>
+                            </div>
+                        </li>
+                        <li>
+                            <i class="fas fa-envelope"></i>
+                            <div>
+                                <p>firstchoicetents2025@gmail.com</p>
+                            </div>
+                        </li>
+                        <li>
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div>
+                                <p><strong>Mukono Branch:</strong> Opposite BE Energy Petrol Station, next to Jobia Hotel</p>
+                                <p><strong>Arua Branch:</strong> Baluku Cell, next to Arua Primary School, Sudan Road</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 First Choice Tents & Aluminium Fabrication. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+ 
+
+    <a href="https://wa.me/256706028299" class="whatsapp-float" target="_blank">💬</a>
+
+    <script>
+        // Mobile menu
+        const mobileMenu = document.getElementById('mobileMenu');
+        const navLinks = document.getElementById('navLinks');
+        
+        mobileMenu.addEventListener('click', () => {
+            navLinks.classList.toggle('show');
+        });
+
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    navLinks.classList.remove('show');
+                }
+            });
+        });
+
+        // Scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.feature-item, .service-card, .process-step').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = 'all 0.6s ease';
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
