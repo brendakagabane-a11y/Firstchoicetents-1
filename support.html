@@ -9,7 +9,6 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
     <style>
         :root {
             --primary: #004E89;
@@ -64,7 +63,16 @@
         }
 
         /* Enhanced Header */
-       
+        #navbar {
+            position: sticky;
+            top: 0;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+            transition: var(--transition);
+        }
+
         [data-theme="dark"] #navbar {
             background: rgba(30, 41, 59, 0.95);
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
@@ -186,15 +194,7 @@
         /* Hero Section */
         .support-hero {
             padding: 6rem 2rem;
-            background-image: 
-                linear-gradient(
-                    rgba(0, 0, 0, 0.6),
-                    rgba(0, 0, 0, 0.6)
-                ),
-                url('Home28.jpg');
-            background-size: cover; 
-            background-position: center center; 
-            background-repeat: no-repeat;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
             color: white;
             text-align: center;
             position: relative;
@@ -1277,4 +1277,4 @@
         });
     </script>
 </body>
-</html>
+    </html>
